@@ -41,3 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1539097703
+    locked: 0
+  - name: Exits
+    uniqueID: 3096450867
+    locked: 0
+  - name: Agents
+    uniqueID: 3144364999
+    locked: 0
+  - name: Player
+    uniqueID: 4069790677
+    locked: 0
+  - name: Weapons
+    uniqueID: 3411735731
+    locked: 0
+  - name: Front
+    uniqueID: 1757373937
+    locked: 0
+  - name: Pickable
+    uniqueID: 1141401649
+    locked: 0
+  - name: UI
+    uniqueID: 1836897439
+    locked: 0
