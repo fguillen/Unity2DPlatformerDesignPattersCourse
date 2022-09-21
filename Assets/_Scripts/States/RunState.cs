@@ -8,7 +8,7 @@ public class RunState : State
     [SerializeField] float deceleration;
     [SerializeField] float maxSpeed;
 
-    public override void EnterState()
+    protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
 

@@ -57,7 +57,7 @@ public class Agent : MonoBehaviour
     {
         Debug.Log($"TransitionToState({stateType.ToString()})");
 
-        currentState?.ExitState();
+        currentState?.Exit();
 
         switch (stateType)
         {
@@ -81,7 +81,7 @@ public class Agent : MonoBehaviour
                 break;
         }
 
-        currentState.EnterState();
+        currentState.Enter();
     }
 
     void HandleMovement(Vector2 movement)

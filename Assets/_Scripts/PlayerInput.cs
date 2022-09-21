@@ -21,7 +21,6 @@ public class PlayerInput : MonoBehaviour
             GetMovementInput();
             GetJumpInput();
             GetAttackInput();
-
         }
 
         GetMenuInput();
@@ -38,7 +37,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(jumpKey))
             OnJumpPressed?.Invoke();
 
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyUp(jumpKey))
             OnJumpReleased?.Invoke();
     }
 

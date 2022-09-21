@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public override void EnterState()
+    protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.idle);
         agent.movementData.currentSpeed = 0;

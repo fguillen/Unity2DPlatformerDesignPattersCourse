@@ -41,8 +41,8 @@ public abstract class State : MonoBehaviour
     protected virtual void HandleJumpReleased() {}
     protected virtual void HandleWeaponChange() {}
 
-    public virtual void EnterState() {}
-    public virtual void ExitState() {}
+    protected virtual void EnterState() {}
+    protected virtual void ExitState() {}
 
     public virtual void StateUpdate() {}
     public virtual void StateFixedUpdate() {}

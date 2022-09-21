@@ -233,6 +233,7 @@ MonoBehaviour:
   deceleration: 50
   maxSpeed: 6
   jumpForce: 10
+  lowJumpForce: 100
 --- !u!114 &93075308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +255,7 @@ MonoBehaviour:
   acceleration: 50
   deceleration: 50
   maxSpeed: 6
+  fallForce: 50
 --- !u!1 &388840506
 GameObject:
   m_ObjectHideFlags: 0
