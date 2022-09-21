@@ -1886,6 +1886,7 @@ GameObject:
   - component: {fileID: 2095364654}
   - component: {fileID: 2095364655}
   - component: {fileID: 2095364656}
+  - component: {fileID: 2095364657}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1987,6 +1988,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d732f51562774149bce3afeced36d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2095364657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095364652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16342b6b150534269a136edf4a6de231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2142470470127080044
