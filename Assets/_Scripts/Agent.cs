@@ -4,33 +4,68 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-    Rigidbody2D rb2d;
-    PlayerInput playerInput;
-    AgentAnimation agentAnimation;
+    [HideInInspector] public Rigidbody2D rb2d;
+    [HideInInspector] public PlayerInput agentInput;
+    [HideInInspector] public AgentAnimation agentAnimation;
     AgentRenderer agentRenderer;
+
+    [SerializeField] State currentState;
+
+    [SerializeField] State idleState;
+    [SerializeField] State runState;
+    [SerializeField] MovementData movementData;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        playerInput = GetComponentInParent<PlayerInput>();
+        agentInput = GetComponentInParent<PlayerInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
+
+        idleState.InitializeState(this);
+        runState.InitializeState(this);
+
+        TransitionToState(StateType.idle);
+    }
+
+    void Update()
+    {
+        currentState?.StateUpdate();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerInput.OnMovement += HandleMovement;
-        playerInput.OnMovement += agentRenderer.FaceDirection;
+        agentInput.OnMovement += HandleMovement;
+        agentInput.OnMovement += agentRenderer.FaceDirection;
+    }
+
+    public void TransitionToState(StateType stateType)
+    {
+        Debug.Log($"TransitionToState({stateType.ToString()})");
+
+        currentState?.ExitState();
+
+        switch (stateType)
+        {
+            case StateType.idle:
+                currentState = idleState;
+                break;
+
+            case StateType.run:
+                currentState = runState;
+                break;
+
+            default:
+                break;
+        }
+
+        currentState.EnterState();
     }
 
     void HandleMovement(Vector2 movement)
     {
-        if(Mathf.Abs(movement.x) > 0.01f)
-            agentAnimation.PlayAnimation(AnimationType.run);
-        else
-            agentAnimation.PlayAnimation(AnimationType.idle);
-
-        rb2d.velocity = new Vector2(movement.x * 5f, rb2d.velocity.y);
+        movementData.agentMovement = movement;
+        currentState.HandleMovement(movement);
     }
 }
