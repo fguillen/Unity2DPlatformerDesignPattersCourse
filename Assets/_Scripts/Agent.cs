@@ -7,14 +7,16 @@ public class Agent : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb2d;
     [HideInInspector] public PlayerInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
+    [HideInInspector] public GroundDetector groundDetector;
     AgentRenderer agentRenderer;
-    GroundDetector groundDetector;
 
     [SerializeField] State currentState;
 
     [SerializeField] State idleState;
     [SerializeField] State runState;
-    [SerializeField] MovementData movementData;
+    [SerializeField] State jumpState;
+    [SerializeField] State fallState;
+    [SerializeField] public MovementData movementData;
 
     void Awake()
     {
@@ -26,6 +28,8 @@ public class Agent : MonoBehaviour
 
         idleState.InitializeState(this);
         runState.InitializeState(this);
+        jumpState.InitializeState(this);
+        fallState.InitializeState(this);
 
         TransitionToState(StateType.idle);
     }
@@ -46,6 +50,7 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += agentRenderer.FaceDirection;
+        agentInput.OnJumpPressed += HandleJumpPressed;
     }
 
     public void TransitionToState(StateType stateType)
@@ -64,6 +69,14 @@ public class Agent : MonoBehaviour
                 currentState = runState;
                 break;
 
+            case StateType.jump:
+                currentState = jumpState;
+                break;
+
+            case StateType.fall:
+                currentState = fallState;
+                break;
+
             default:
                 break;
         }
@@ -75,5 +88,11 @@ public class Agent : MonoBehaviour
     {
         movementData.agentMovement = movement;
         currentState.HandleMovement(movement);
+    }
+
+    void HandleJumpPressed()
+    {
+        if(groundDetector.isGrounded)
+            TransitionToState(StateType.jump);
     }
 }

@@ -7,6 +7,9 @@ public class IdleState : State
     public override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.idle);
+        agent.movementData.currentSpeed = 0;
+        agent.movementData.currentVelocity = Vector2.zero;
+        agent.rb2d.velocity = agent.movementData.currentVelocity;
     }
 
     public override void HandleMovement(Vector2 movement)

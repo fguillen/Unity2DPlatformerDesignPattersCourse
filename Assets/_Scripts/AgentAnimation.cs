@@ -21,8 +21,17 @@ public class AgentAnimation : MonoBehaviour
             case AnimationType.idle:
                 Play("Idle");
                 break;
+
             case AnimationType.run:
                 Play("Run");
+                break;
+
+            case AnimationType.jump:
+                Play("Jump");
+                break;
+
+            case AnimationType.fall:
+                Play("Fall");
                 break;
 
             default:

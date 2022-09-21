@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class RunState : State
 {
-    protected MovementData movementData;
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
     [SerializeField] float maxSpeed;
-
-    void Awake()
-    {
-        movementData = GetComponent<MovementData>();
-    }
 
     public override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
 
-        movementData.currentSpeed = 0f;
-        movementData.currentVelocity = Vector2.zero;
+        agent.movementData.currentSpeed = 0f;
+        agent.movementData.currentVelocity = Vector2.zero;
     }
 
-    public override void StateUpdate()
+    public override void StateFixedUpdate()
     {
         SetPlayerVelocity();
 
@@ -30,27 +24,26 @@ public class RunState : State
             agent.TransitionToState(StateType.idle);
     }
 
-    void CalculateVelocity()
-    {
-        movementData.currentVelocity = new Vector2(movementData.horizontalMovementDirection * movementData.currentSpeed, agent.rb2d.velocity.y);
-    }
-
-    void SetPlayerVelocity()
+    protected void SetPlayerVelocity()
     {
         CalculateSpeed();
         CalculateVelocity();
 
-        agent.rb2d.velocity = movementData.currentVelocity;
+        agent.rb2d.velocity = agent.movementData.currentVelocity;
     }
 
     void CalculateSpeed()
     {
-        if(Mathf.Abs(movementData.agentMovement.x) > 0f)
-            movementData.currentSpeed += acceleration * Time.deltaTime;
+        if(Mathf.Abs(agent.movementData.agentMovement.x) > 0f)
+            agent.movementData.currentSpeed += acceleration * Time.deltaTime;
         else
-            movementData.currentSpeed -= deceleration * Time.deltaTime;
+            agent.movementData.currentSpeed -= deceleration * Time.deltaTime;
 
-        movementData.currentSpeed = Mathf.Clamp(movementData.currentSpeed, 0f, maxSpeed);
+        agent.movementData.currentSpeed = Mathf.Clamp(agent.movementData.currentSpeed, 0f, maxSpeed);
     }
 
+    void CalculateVelocity()
+    {
+        agent.movementData.currentVelocity = new Vector2(agent.movementData.horizontalMovementDirection * agent.movementData.currentSpeed, agent.rb2d.velocity.y);
+    }
 }
