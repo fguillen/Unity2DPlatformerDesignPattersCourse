@@ -81,7 +81,7 @@ public class Agent : MonoBehaviour
                 break;
         }
 
-        currentState.Enter();
+        currentState?.Enter();
     }
 
     void HandleMovement(Vector2 movement)

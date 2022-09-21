@@ -18,6 +18,12 @@ public class RunState : State
 
     public override void StateFixedUpdate()
     {
+        if(!agent.groundDetector.isGrounded)
+        {
+            agent.TransitionToState(StateType.fall);
+            return;
+        }
+
         SetPlayerVelocity();
 
         if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)

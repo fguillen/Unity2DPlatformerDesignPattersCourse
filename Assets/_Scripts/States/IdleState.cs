@@ -18,4 +18,10 @@ public class IdleState : State
             agent.TransitionToState(StateType.run);
     }
 
+    public override void StateFixedUpdate()
+    {
+        if(!agent.groundDetector.isGrounded)
+            agent.TransitionToState(StateType.fall);
+    }
+
 }
