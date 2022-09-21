@@ -32,7 +32,7 @@ public class RunState : State
 
     void CalculateVelocity()
     {
-        movementData.currentVelocity = new Vector2(movementData.horizontalMovementDirection * movementData.currentSpeed, movementData.currentVelocity.y);
+        movementData.currentVelocity = new Vector2(movementData.horizontalMovementDirection * movementData.currentSpeed, agent.rb2d.velocity.y);
     }
 
     void SetPlayerVelocity()

@@ -8,6 +8,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public PlayerInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
     AgentRenderer agentRenderer;
+    GroundDetector groundDetector;
 
     [SerializeField] State currentState;
 
@@ -21,6 +22,7 @@ public class Agent : MonoBehaviour
         agentInput = GetComponentInParent<PlayerInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
+        groundDetector = GetComponentInChildren<GroundDetector>();
 
         idleState.InitializeState(this);
         runState.InitializeState(this);
@@ -31,6 +33,12 @@ public class Agent : MonoBehaviour
     void Update()
     {
         currentState?.StateUpdate();
+    }
+
+    void FixedUpdate()
+    {
+        groundDetector.DetectGrounded();
+        currentState?.StateFixedUpdate();
     }
 
     // Start is called before the first frame update
