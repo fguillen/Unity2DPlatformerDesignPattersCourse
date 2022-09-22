@@ -10,6 +10,7 @@ public class AgentAnimation : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
+        Debug.Log($"AgentAnimation.animator: {animator}");
     }
 
     public void PlayAnimation(AnimationType animationType)

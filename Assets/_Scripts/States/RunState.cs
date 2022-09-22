@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class RunState : State
 {
-    [SerializeField] float acceleration;
-    [SerializeField] float deceleration;
-    [SerializeField] float maxSpeed;
-
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
@@ -41,11 +37,11 @@ public class RunState : State
     void CalculateSpeed()
     {
         if(Mathf.Abs(agent.movementData.agentMovement.x) > 0f)
-            agent.movementData.currentSpeed += acceleration * Time.deltaTime;
+            agent.movementData.currentSpeed += agent.agentData.acceleration * Time.deltaTime;
         else
-            agent.movementData.currentSpeed -= deceleration * Time.deltaTime;
+            agent.movementData.currentSpeed -= agent.agentData.deceleration * Time.deltaTime;
 
-        agent.movementData.currentSpeed = Mathf.Clamp(agent.movementData.currentSpeed, 0f, maxSpeed);
+        agent.movementData.currentSpeed = Mathf.Clamp(agent.movementData.currentSpeed, 0f, agent.agentData.maxSpeed);
     }
 
     void CalculateVelocity()

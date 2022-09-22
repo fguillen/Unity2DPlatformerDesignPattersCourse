@@ -190,9 +190,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  acceleration: 50
-  deceleration: 50
-  maxSpeed: 6
 --- !u!114 &93075306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,11 +226,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  acceleration: 50
-  deceleration: 50
-  maxSpeed: 6
-  jumpForce: 10
-  lowJumpForce: 100
 --- !u!114 &93075308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,10 +244,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  acceleration: 50
-  deceleration: 50
-  maxSpeed: 6
-  fallForce: 50
 --- !u!1 &388840506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +1931,7 @@ MonoBehaviour:
   jumpState: {fileID: 93075307}
   fallState: {fileID: 93075308}
   movementData: {fileID: 93075304}
+  agentData: {fileID: 11400000, guid: 1a2d5139e3a59479e856e0c25fb0b519, type: 2}
 --- !u!1 &1419819717
 GameObject:
   m_ObjectHideFlags: 0

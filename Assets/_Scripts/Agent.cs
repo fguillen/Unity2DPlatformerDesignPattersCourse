@@ -17,6 +17,7 @@ public class Agent : MonoBehaviour
     [SerializeField] State jumpState;
     [SerializeField] State fallState;
     [SerializeField] public MovementData movementData;
+    [SerializeField] public AgentDataSO agentData;
 
     void Awake()
     {
@@ -30,8 +31,6 @@ public class Agent : MonoBehaviour
         runState.InitializeState(this);
         jumpState.InitializeState(this);
         fallState.InitializeState(this);
-
-        TransitionToState(StateType.idle);
     }
 
     void Update()
@@ -51,6 +50,8 @@ public class Agent : MonoBehaviour
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += agentRenderer.FaceDirection;
         agentInput.OnJumpPressed += HandleJumpPressed;
+
+        TransitionToState(StateType.idle);
     }
 
     public void TransitionToState(StateType stateType)

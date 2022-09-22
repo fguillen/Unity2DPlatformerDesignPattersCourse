@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class JumpState : RunState
 {
-    [SerializeField] float jumpForce = 10f;
-    [SerializeField] float lowJumpForce = 2f;
-
     bool jumpPressed = false;
 
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.jump);
-        agent.rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        agent.rb2d.AddForce(Vector2.up * agent.agentData.jumpForce, ForceMode2D.Impulse);
         jumpPressed = true;
 
         Debug.Log($"EnterState {jumpPressed}");
@@ -35,7 +32,7 @@ public class JumpState : RunState
         Debug.Log($"ApplyLowJumpModifier {jumpPressed}");
 
         if(!jumpPressed)
-            agent.rb2d.AddForce(Vector2.down * lowJumpForce, ForceMode2D.Force);
+            agent.rb2d.AddForce(Vector2.down * agent.agentData.lowJumpForce, ForceMode2D.Force);
     }
 
     protected override void HandleJumpReleased()
