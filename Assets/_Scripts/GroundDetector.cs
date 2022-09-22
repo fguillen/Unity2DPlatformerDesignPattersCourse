@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class GroundDetector : MonoBehaviour
 {
-    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] BoxCollider2D templateCollider;
+    [SerializeField] BoxCollider2D insideCollider;
     [SerializeField] LayerMask groundMask;
     public bool isGrounded;
 
@@ -13,8 +14,8 @@ public class GroundDetector : MonoBehaviour
     {
         RaycastHit2D hit =
             Physics2D.BoxCast(
-                (Vector2)boxCollider.bounds.center + boxCollider.offset,
-                boxCollider.size,
+                (Vector2)templateCollider.bounds.center + templateCollider.offset,
+                templateCollider.size,
                 0f,
                 Vector2.down,
                 0f,
@@ -22,7 +23,11 @@ public class GroundDetector : MonoBehaviour
             );
 
         if(hit.collider != null)
-            isGrounded = true;
+        {
+            if(!hit.collider.IsTouching(insideCollider))
+                isGrounded = true;
+        }
+
         else
             isGrounded = false;
     }
@@ -33,6 +38,6 @@ public class GroundDetector : MonoBehaviour
         Color groundedColor = Color.green;
         Color noGroundedColor = Color.red;
         Gizmos.color = isGrounded ? groundedColor : noGroundedColor;
-        Gizmos.DrawWireCube((Vector2)boxCollider.bounds.center + boxCollider.offset, boxCollider.size);
+        Gizmos.DrawWireCube((Vector2)templateCollider.bounds.center + templateCollider.offset, templateCollider.size);
     }
 }

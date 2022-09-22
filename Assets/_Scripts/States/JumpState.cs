@@ -20,7 +20,7 @@ public class JumpState : RunState
         ApplyLowJumpModifier();
         SetPlayerVelocity();
 
-        if(agent.rb2d.velocity.y < 0)
+        if(agent.rb2d.velocity.y <= 0)
         {
             agent.rb2d.velocity = new Vector2(agent.rb2d.velocity.x, 0f);
             agent.TransitionToState(StateType.fall);
