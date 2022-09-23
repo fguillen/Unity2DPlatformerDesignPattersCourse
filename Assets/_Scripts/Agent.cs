@@ -8,6 +8,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public PlayerInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
     [HideInInspector] public GroundDetector groundDetector;
+    [HideInInspector] public ClimbDetector climbDetector;
     AgentRenderer agentRenderer;
 
     [SerializeField] State currentState;
@@ -16,6 +17,7 @@ public class Agent : MonoBehaviour
     [SerializeField] State runState;
     [SerializeField] State jumpState;
     [SerializeField] State fallState;
+    [SerializeField] State climbState;
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
 
@@ -26,11 +28,13 @@ public class Agent : MonoBehaviour
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
         groundDetector = GetComponentInChildren<GroundDetector>();
+        climbDetector = GetComponentInChildren<ClimbDetector>();
 
         idleState.InitializeState(this);
         runState.InitializeState(this);
         jumpState.InitializeState(this);
         fallState.InitializeState(this);
+        climbState.InitializeState(this);
     }
 
     void Update()
@@ -76,6 +80,10 @@ public class Agent : MonoBehaviour
 
             case StateType.fall:
                 currentState = fallState;
+                break;
+
+            case StateType.climb:
+                currentState = climbState;
                 break;
 
             default:

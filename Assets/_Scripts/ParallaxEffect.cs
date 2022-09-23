@@ -21,8 +21,8 @@ public class ParallaxEffect : MonoBehaviour
     {
         transform.position =
             new Vector3(
-                offset.x + Camera.main.transform.position.x * movementSpeed,
-                offset.y + Camera.main.transform.position.y * movementSpeed,
+                (offset.x + Camera.main.transform.position.x) * movementSpeed,
+                (offset.y + Camera.main.transform.position.y) * movementSpeed,
                 originalPosition.z
             );
     }

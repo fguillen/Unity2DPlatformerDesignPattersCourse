@@ -14,4 +14,8 @@ public class AgentDataSO : ScriptableObject
     public float jumpForce = 12f;
     public float lowJumpForce = 50f;
     public float fallForce = 50f;
+
+    [Header("Climb Data")]
+    [Space]
+    public float climbSpeed = 4f;
 }

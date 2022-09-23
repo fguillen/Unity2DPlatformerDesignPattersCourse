@@ -35,6 +35,10 @@ public class AgentAnimation : MonoBehaviour
                 Play("Fall");
                 break;
 
+            case AnimationType.climb:
+                Play("Climb");
+                break;
+
             default:
                 break;
         }

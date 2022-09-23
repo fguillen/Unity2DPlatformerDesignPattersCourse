@@ -16,6 +16,8 @@ public class IdleState : State
     {
         if(Mathf.Abs(movement.x) > 0)
             agent.TransitionToState(StateType.run);
+        else if(Mathf.Abs(movement.y) > 0 && agent.climbDetector.canClimb)
+            agent.TransitionToState(StateType.climb);
     }
 
     public override void StateFixedUpdate()
