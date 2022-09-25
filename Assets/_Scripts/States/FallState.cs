@@ -9,6 +9,12 @@ public class FallState : RunState
         agent.agentAnimation.PlayAnimation(AnimationType.fall);
     }
 
+    public override void StateUpdate()
+    {
+        if(agent.climbDetector.canClimb && agent.movementData.agentMovementAbs.y > 0)
+            agent.TransitionToState(StateType.climb);
+    }
+
     public override void StateFixedUpdate()
     {
         ApplyFallForce();

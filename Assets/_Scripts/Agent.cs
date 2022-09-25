@@ -53,7 +53,6 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += agentRenderer.FaceDirection;
-        agentInput.OnJumpPressed += HandleJumpPressed;
 
         TransitionToState(StateType.idle);
     }
@@ -97,11 +96,5 @@ public class Agent : MonoBehaviour
     {
         movementData.agentMovement = movement;
         currentState.HandleMovement(movement);
-    }
-
-    void HandleJumpPressed()
-    {
-        if(groundDetector.isGrounded)
-            TransitionToState(StateType.jump);
     }
 }

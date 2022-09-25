@@ -7,9 +7,9 @@ public class IdleState : State
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.idle);
-        agent.movementData.currentSpeed = 0;
-        agent.movementData.currentVelocity = Vector2.zero;
-        agent.rb2d.velocity = agent.movementData.currentVelocity;
+
+        if(agent.groundDetector.isGrounded)
+            agent.rb2d.velocity = agent.movementData.currentVelocity;
     }
 
     public override void HandleMovement(Vector2 movement)
@@ -24,6 +24,12 @@ public class IdleState : State
     {
         if(!agent.groundDetector.isGrounded)
             agent.TransitionToState(StateType.fall);
+    }
+
+    protected override void HandleJumpPressed()
+    {
+        if(agent.groundDetector.isGrounded)
+            agent.TransitionToState(StateType.jump);
     }
 
 }

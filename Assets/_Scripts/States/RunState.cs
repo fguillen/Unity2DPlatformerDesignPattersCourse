@@ -48,4 +48,10 @@ public class RunState : State
     {
         agent.movementData.currentVelocity = new Vector2(agent.movementData.horizontalMovementDirection * agent.movementData.currentSpeed, agent.rb2d.velocity.y);
     }
+
+    protected override void HandleJumpPressed()
+    {
+        if(agent.groundDetector.isGrounded)
+            agent.TransitionToState(StateType.jump);
+    }
 }

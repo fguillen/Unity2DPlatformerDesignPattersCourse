@@ -53,5 +53,10 @@ public class ClimbState : State
             );
     }
 
+    protected override void HandleJumpPressed()
+    {
+        agent.TransitionToState(StateType.jump);
+    }
+
 
 }
