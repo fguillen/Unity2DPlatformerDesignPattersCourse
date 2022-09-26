@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayerSpawn;
 
 public class Agent : MonoBehaviour
 {
@@ -96,5 +97,10 @@ public class Agent : MonoBehaviour
     {
         movementData.agentMovement = movement;
         currentState.HandleMovement(movement);
+    }
+
+    public void Die()
+    {
+        PlayerSpawnManager.instance.SpawnPlayer();
     }
 }
