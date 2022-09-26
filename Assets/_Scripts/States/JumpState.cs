@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JumpState : RunState
 {
     bool jumpPressed = false;
+    public UnityEvent OnJump;
 
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.jump);
         agent.rb2d.AddForce(Vector2.up * agent.agentData.jumpForce, ForceMode2D.Impulse);
         jumpPressed = true;
+
+        OnJump?.Invoke();
 
         Debug.Log($"EnterState {jumpPressed}");
     }
@@ -40,6 +44,8 @@ public class JumpState : RunState
         Debug.Log($"HandleJumpReleased()");
         jumpPressed = false;
     }
+
+
 
 
 }

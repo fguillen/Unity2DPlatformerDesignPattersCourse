@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FallState : RunState
 {
+    public UnityEvent OnLand;
+
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.fall);
     }
+
+    protected override void ExitState()
+    {
+        if(agent.groundDetector.isGrounded)
+            OnLand?.Invoke();
+    }
+
 
     public override void StateUpdate()
     {

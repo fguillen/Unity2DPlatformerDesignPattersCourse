@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class AgentAnimation : MonoBehaviour
 {
     Animator animator;
     AnimationType animationActive;
+    public event Action OnAnimationAction;
+    public event Action OnAnimationEnd;
 
     void Awake()
     {
@@ -49,6 +52,16 @@ public class AgentAnimation : MonoBehaviour
     void Play(string name)
     {
         animator.Play(name, -1, 0f);
+    }
+
+    void HandleAnimationAction()
+    {
+        OnAnimationAction?.Invoke();
+    }
+
+    void HandleAnimationEnd()
+    {
+        OnAnimationEnd?.Invoke();
     }
 }
 

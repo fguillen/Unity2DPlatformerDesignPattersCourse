@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RunState : State
 {
+    public UnityEvent OnStep;
+
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
@@ -53,5 +56,10 @@ public class RunState : State
     {
         if(agent.groundDetector.isGrounded)
             agent.TransitionToState(StateType.jump);
+    }
+
+    protected override void HandleAnimationAction()
+    {
+        OnStep?.Invoke();
     }
 }
