@@ -28,6 +28,8 @@ namespace WeaponSystem
 
             if(hit.collider != null)
             {
+                Debug.Log("Hitted something");
+
                 foreach (var hittable in hit.collider.GetComponents<IHittable>())
                 {
                     hittable.GetHit(damage);

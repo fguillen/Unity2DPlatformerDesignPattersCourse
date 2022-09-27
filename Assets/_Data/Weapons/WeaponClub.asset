@@ -16,4 +16,7 @@ MonoBehaviour:
   damage: 1
   sprite: {fileID: 21300000, guid: dc1a5260470ab9d43a040c4e9c89bead, type: 3}
   soundEffect: {fileID: 0}
+  hittableMask:
+    serializedVersion: 2
+    m_Bits: 147968
   range: 2
