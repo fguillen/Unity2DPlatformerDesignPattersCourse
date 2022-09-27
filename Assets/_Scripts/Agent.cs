@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayerSpawn;
+using WeaponSystem;
 
 public class Agent : MonoBehaviour
 {
@@ -10,15 +11,17 @@ public class Agent : MonoBehaviour
     [HideInInspector] public AgentAnimation agentAnimation;
     [HideInInspector] public GroundDetector groundDetector;
     [HideInInspector] public ClimbDetector climbDetector;
+    [HideInInspector] public WeaponManager weaponManager;
     AgentRenderer agentRenderer;
 
     [SerializeField] State currentState;
 
-    [SerializeField] State idleState;
-    [SerializeField] State runState;
-    [SerializeField] State jumpState;
-    [SerializeField] State fallState;
-    [SerializeField] State climbState;
+    State idleState;
+    State runState;
+    State jumpState;
+    State fallState;
+    State climbState;
+    State attackState;
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
 
@@ -31,11 +34,22 @@ public class Agent : MonoBehaviour
         groundDetector = GetComponentInChildren<GroundDetector>();
         climbDetector = GetComponentInChildren<ClimbDetector>();
 
+        weaponManager = GetComponentInChildren<WeaponManager>();
+        weaponManager.Initialize(this);
+
+        idleState = GetComponentInChildren<IdleState>();
+        runState = GetComponentInChildren<RunState>();
+        jumpState = GetComponentInChildren<JumpState>();
+        fallState = GetComponentInChildren<FallState>();
+        climbState = GetComponentInChildren<ClimbState>();
+        attackState = GetComponentInChildren<AttackState>();
+
         idleState.InitializeState(this);
         runState.InitializeState(this);
         jumpState.InitializeState(this);
         fallState.InitializeState(this);
         climbState.InitializeState(this);
+        attackState.InitializeState(this);
     }
 
     void Update()
@@ -84,6 +98,10 @@ public class Agent : MonoBehaviour
 
             case StateType.climb:
                 currentState = climbState;
+                break;
+
+            case StateType.attack:
+                currentState = attackState;
                 break;
 
             default:

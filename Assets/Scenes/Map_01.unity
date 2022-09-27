@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 93075308}
   - component: {fileID: 93075304}
   - component: {fileID: 93075309}
+  - component: {fileID: 93075310}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -348,6 +349,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 904b6a9c0db8143489892c7600891f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &93075310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93075302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4bd2265de6c4797860dab23524103e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &120530513
@@ -4841,6 +4854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438259928}
   - component: {fileID: 438259927}
+  - component: {fileID: 438259929}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4882,6 +4896,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438259929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438259926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28c079d2ac544ef78954919dc65a228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
 --- !u!4 &484523755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1514718044607209621, guid: 936ca67a8a5f944fca8b635e94a963bc, type: 3}
@@ -9342,6 +9370,7 @@ Transform:
   - {fileID: 388840507}
   - {fileID: 93075303}
   - {fileID: 1668453934}
+  - {fileID: 1705717729}
   m_Father: {fileID: 438259928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9362,12 +9391,8 @@ MonoBehaviour:
   agentAnimation: {fileID: 0}
   groundDetector: {fileID: 0}
   climbDetector: {fileID: 0}
+  weaponManager: {fileID: 0}
   currentState: {fileID: 0}
-  idleState: {fileID: 93075306}
-  runState: {fileID: 93075305}
-  jumpState: {fileID: 93075307}
-  fallState: {fileID: 93075308}
-  climbState: {fileID: 93075309}
   movementData: {fileID: 93075304}
   agentData: {fileID: 11400000, guid: 1a2d5139e3a59479e856e0c25fb0b519, type: 2}
 --- !u!61 &1240513482
@@ -9411,6 +9436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1668453934}
     m_Modifications:
+    - target: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
+      propertyPath: volume
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
       propertyPath: audioClip
       value: 
@@ -10338,6 +10367,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2142470471301356173, guid: 52ddfe10e93af4c7d9d77fb7407d317e, type: 3}
   m_PrefabInstance: {fileID: 1702210451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1705717728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705717729}
+  - component: {fileID: 1705717730}
+  m_Layer: 15
+  m_Name: WeaponManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705717729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705717728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.282, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1240513480}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705717730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705717728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440acf548a814473d82b125d4d3726d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  currentWeapon: {fileID: 0}
+  drawGizmo: 1
 --- !u!1 &1723242089
 GameObject:
   m_ObjectHideFlags: 0

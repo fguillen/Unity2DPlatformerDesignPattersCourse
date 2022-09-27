@@ -20,6 +20,12 @@ public class IdleState : State
             agent.TransitionToState(StateType.climb);
     }
 
+    protected override void HandleAttack()
+    {
+        if(agent.weaponManager.CanAttack())
+            agent.TransitionToState(StateType.attack);
+    }
+
     public override void StateFixedUpdate()
     {
         if(!agent.groundDetector.isGrounded)
