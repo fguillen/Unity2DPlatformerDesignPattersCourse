@@ -1,12 +1,12 @@
 public enum StateType
 {
-    die,
-    hit,
-    idle,
-    attack,
-    run,
-    jump,
-    fall,
-    climb,
-    land
+    Die,
+    Hit,
+    Idle,
+    Attack,
+    Run,
+    Jump,
+    Fall,
+    Climb,
+    Land
 }

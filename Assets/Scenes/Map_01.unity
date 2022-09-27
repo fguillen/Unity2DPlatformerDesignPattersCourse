@@ -13580,10 +13580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 438259928}
     m_Modifications:
-    - target: {fileID: 7789505557465438933, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 133184
-      objectReference: {fileID: 0}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
       value: 0

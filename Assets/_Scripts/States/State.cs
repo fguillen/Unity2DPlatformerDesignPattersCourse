@@ -7,7 +7,9 @@ public abstract class State : MonoBehaviour
 {
     protected Agent agent;
 
-    public void InitializeState(Agent agent)
+    public abstract StateType Type();
+
+    public void Initialize(Agent agent)
     {
         this.agent = agent;
     }
@@ -18,6 +20,7 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnJumpPressed += HandleJumpPressed;
         this.agent.agentInput.OnJumpReleased += HandleJumpReleased;
         this.agent.agentInput.OnWeaponChange += HandleWeaponChange;
+        this.agent.agentInput.OnMovement += HandleMovement;
 
         this.agent.agentAnimation.OnAnimationAction += HandleAnimationAction;
         this.agent.agentAnimation.OnAnimationEnd += HandleAnimationEnd;
@@ -31,6 +34,7 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnJumpPressed -= HandleJumpPressed;
         this.agent.agentInput.OnJumpReleased -= HandleJumpReleased;
         this.agent.agentInput.OnWeaponChange -= HandleWeaponChange;
+        this.agent.agentInput.OnMovement -= HandleMovement;
 
         this.agent.agentAnimation.OnAnimationAction -= HandleAnimationAction;
         this.agent.agentAnimation.OnAnimationEnd -= HandleAnimationEnd;
@@ -38,7 +42,7 @@ public abstract class State : MonoBehaviour
         ExitState();
     }
 
-    public virtual void HandleMovement(Vector2 movement) {}
+    protected virtual void HandleMovement(Vector2 movement) {}
     protected virtual void HandleAttack() {}
     protected virtual void HandleJumpPressed() {}
     protected virtual void HandleJumpReleased() {}

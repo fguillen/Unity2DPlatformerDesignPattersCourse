@@ -6,7 +6,10 @@ public class ClimbState : State
 {
     float previousGravityScale;
 
-
+    public override StateType Type()
+    {
+        return StateType.Climb;
+    }
 
     protected override void EnterState()
     {
@@ -30,7 +33,7 @@ public class ClimbState : State
     {
         if(!agent.climbDetector.canClimb)
         {
-            agent.TransitionToState(StateType.idle);
+            agent.stateManager.TransitionToState(StateType.Idle);
             return;
         }
 
@@ -55,7 +58,7 @@ public class ClimbState : State
 
     protected override void HandleJumpPressed()
     {
-        agent.TransitionToState(StateType.jump);
+        agent.stateManager.TransitionToState(StateType.Jump);
     }
 
 

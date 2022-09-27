@@ -7,6 +7,11 @@ public class FallState : RunState
 {
     public UnityEvent OnLand;
 
+    public override StateType Type()
+    {
+        return StateType.Fall;
+    }
+
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.fall);
@@ -22,7 +27,7 @@ public class FallState : RunState
     public override void StateUpdate()
     {
         if(agent.climbDetector.canClimb && agent.movementData.agentMovementAbs.y > 0)
-            agent.TransitionToState(StateType.climb);
+            agent.stateManager.TransitionToState(StateType.Climb);
     }
 
     public override void StateFixedUpdate()
@@ -31,7 +36,7 @@ public class FallState : RunState
         SetPlayerVelocity();
 
         if(agent.groundDetector.isGrounded)
-            agent.TransitionToState(StateType.idle);
+            agent.stateManager.TransitionToState(StateType.Idle);
     }
 
     void ApplyFallForce()

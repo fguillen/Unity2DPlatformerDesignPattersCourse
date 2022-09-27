@@ -7,6 +7,11 @@ public class RunState : State
 {
     public UnityEvent OnStep;
 
+    public override StateType Type()
+    {
+        return StateType.Run;
+    }
+
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
@@ -20,14 +25,14 @@ public class RunState : State
     {
         if(!agent.groundDetector.isGrounded)
         {
-            agent.TransitionToState(StateType.fall);
+            agent.stateManager.TransitionToState(StateType.Fall);
             return;
         }
 
         SetPlayerVelocity();
 
         if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)
-            agent.TransitionToState(StateType.idle);
+            agent.stateManager.TransitionToState(StateType.Idle);
     }
 
     protected void SetPlayerVelocity()
@@ -56,7 +61,7 @@ public class RunState : State
     protected override void HandleJumpPressed()
     {
         if(agent.groundDetector.isGrounded)
-            agent.TransitionToState(StateType.jump);
+            agent.stateManager.TransitionToState(StateType.Jump);
     }
 
     protected override void HandleAnimationAction()
@@ -67,6 +72,6 @@ public class RunState : State
     protected override void HandleAttack()
     {
         if(agent.weaponManager.CanAttack())
-            agent.TransitionToState(StateType.attack);
+            agent.stateManager.TransitionToState(StateType.Attack);
     }
 }

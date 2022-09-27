@@ -12,16 +12,9 @@ public class Agent : MonoBehaviour
     [HideInInspector] public GroundDetector groundDetector;
     [HideInInspector] public ClimbDetector climbDetector;
     [HideInInspector] public WeaponManager weaponManager;
+    [HideInInspector] public StateManager stateManager;
     AgentRenderer agentRenderer;
 
-    [SerializeField] State currentState;
-
-    State idleState;
-    State runState;
-    State jumpState;
-    State fallState;
-    State climbState;
-    State attackState;
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
 
@@ -37,30 +30,19 @@ public class Agent : MonoBehaviour
         weaponManager = GetComponentInChildren<WeaponManager>();
         weaponManager.Initialize(this);
 
-        idleState = GetComponentInChildren<IdleState>();
-        runState = GetComponentInChildren<RunState>();
-        jumpState = GetComponentInChildren<JumpState>();
-        fallState = GetComponentInChildren<FallState>();
-        climbState = GetComponentInChildren<ClimbState>();
-        attackState = GetComponentInChildren<AttackState>();
-
-        idleState.InitializeState(this);
-        runState.InitializeState(this);
-        jumpState.InitializeState(this);
-        fallState.InitializeState(this);
-        climbState.InitializeState(this);
-        attackState.InitializeState(this);
+        stateManager = GetComponentInChildren<StateManager>();
+        stateManager.Initialize(this);
     }
 
     void Update()
     {
-        currentState?.StateUpdate();
+        stateManager.currentState?.StateUpdate();
     }
 
     void FixedUpdate()
     {
         groundDetector.DetectGrounded();
-        currentState?.StateFixedUpdate();
+        stateManager.currentState?.StateFixedUpdate();
     }
 
     // Start is called before the first frame update
@@ -69,52 +51,12 @@ public class Agent : MonoBehaviour
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += agentRenderer.FaceDirection;
 
-        TransitionToState(StateType.idle);
-    }
-
-    public void TransitionToState(StateType stateType)
-    {
-        Debug.Log($"TransitionToState({stateType.ToString()})");
-
-        currentState?.Exit();
-
-        switch (stateType)
-        {
-            case StateType.idle:
-                currentState = idleState;
-                break;
-
-            case StateType.run:
-                currentState = runState;
-                break;
-
-            case StateType.jump:
-                currentState = jumpState;
-                break;
-
-            case StateType.fall:
-                currentState = fallState;
-                break;
-
-            case StateType.climb:
-                currentState = climbState;
-                break;
-
-            case StateType.attack:
-                currentState = attackState;
-                break;
-
-            default:
-                break;
-        }
-
-        currentState?.Enter();
+        stateManager.TransitionToState(StateType.Idle);
     }
 
     void HandleMovement(Vector2 movement)
     {
         movementData.agentMovement = movement;
-        currentState.HandleMovement(movement);
     }
 
     public void Die()

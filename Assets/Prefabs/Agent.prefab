@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7789505557220135296}
   - component: {fileID: 7789505557220135301}
   - component: {fileID: 7789505557220135302}
+  - component: {fileID: 3358798064184700453}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -190,6 +191,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3358798064184700453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789505557220135310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37c5f085d447499cb1776de33be40e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
 --- !u!1 &7789505557465438930
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +253,7 @@ MonoBehaviour:
   insideCollider: {fileID: 7789505557465438934}
   groundMask:
     serializedVersion: 2
-    m_Bits: 2112
+    m_Bits: 133184
   isGrounded: 0
 --- !u!61 &7789505557465438932
 BoxCollider2D:
@@ -498,7 +512,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -883231565
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -715,7 +729,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1150602297
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7495373321489435158, guid: 31e82f5eaa4e3b64082ddb3d16a637af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -798,7 +812,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7789505558502251822}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.75, y: 0.219, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -850,7 +864,7 @@ MonoBehaviour:
   groundDetector: {fileID: 0}
   climbDetector: {fileID: 0}
   weaponManager: {fileID: 0}
-  currentState: {fileID: 0}
+  stateManager: {fileID: 0}
   movementData: {fileID: 7789505557220135296}
   agentData: {fileID: 11400000, guid: 1a2d5139e3a59479e856e0c25fb0b519, type: 2}
 --- !u!61 &7789505558502251810
