@@ -22,7 +22,8 @@ namespace WeaponSystem
                 Physics2D.Raycast(
                     agent.weaponManager.transform.position,
                     Direction(agent),
-                    range
+                    range,
+                    hittableMask
                 );
 
             if(hit.collider != null)

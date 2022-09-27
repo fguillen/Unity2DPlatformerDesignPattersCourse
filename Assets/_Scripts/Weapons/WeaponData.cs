@@ -11,6 +11,7 @@ namespace WeaponSystem
         public int damage;
         public Sprite sprite;
         public AudioClip soundEffect;
+        public LayerMask hittableMask;
 
         public bool Equals(WeaponData other)
         {

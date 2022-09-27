@@ -11,6 +11,7 @@ public class RunState : State
     {
         agent.agentAnimation.PlayAnimation(AnimationType.run);
 
+        agent.rb2d.velocity = Vector2.zero;
         agent.movementData.currentSpeed = 0f;
         agent.movementData.currentVelocity = Vector2.zero;
     }
@@ -61,5 +62,11 @@ public class RunState : State
     protected override void HandleAnimationAction()
     {
         OnStep?.Invoke();
+    }
+
+    protected override void HandleAttack()
+    {
+        if(agent.weaponManager.CanAttack())
+            agent.TransitionToState(StateType.attack);
     }
 }

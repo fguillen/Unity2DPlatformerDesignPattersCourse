@@ -9,7 +9,7 @@ public class IdleState : State
         agent.agentAnimation.PlayAnimation(AnimationType.idle);
 
         if(agent.groundDetector.isGrounded)
-            agent.rb2d.velocity = agent.movementData.currentVelocity;
+            agent.rb2d.velocity = Vector2.zero;
     }
 
     public override void HandleMovement(Vector2 movement)

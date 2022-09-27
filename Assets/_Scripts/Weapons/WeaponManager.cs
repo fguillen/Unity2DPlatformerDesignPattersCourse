@@ -9,8 +9,14 @@ namespace WeaponSystem
         public List<WeaponData> weapons = new List<WeaponData>();
         public WeaponData currentWeapon;
         Agent agent;
+        SpriteRenderer spriteRenderer;
 
         [SerializeField] bool drawGizmo;
+
+        void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         public void Initialize(Agent agent)
         {
@@ -35,12 +41,18 @@ namespace WeaponSystem
         public void PickUpWeapon(WeaponData weaponData)
         {
             AddWeapon(weaponData);
+            SetCurrentWeapon(weaponData);
+        }
+
+        void SetCurrentWeapon(WeaponData weaponData)
+        {
             currentWeapon = weaponData;
+            spriteRenderer.sprite = currentWeapon.sprite;
         }
 
         void OnDrawGizmos()
         {
-            if(!drawGizmo || currentWeapon == null || agent == null)
+            if(!drawGizmo || currentWeapon == null || Application.isPlaying || agent == null)
                 return;
 
             Gizmos.color = Color.red;
