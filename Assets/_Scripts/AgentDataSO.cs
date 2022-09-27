@@ -3,6 +3,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AgentData", menuName = "Agent/AgentData")]
 public class AgentDataSO : ScriptableObject
 {
+
+    [Header("Health Data")]
+    [Space]
+    public int maxHealth = 5;
+
     [Header("Movement Data")]
     [Space]
     public float maxSpeed = 6f;

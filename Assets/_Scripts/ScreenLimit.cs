@@ -11,6 +11,9 @@ public class ScreenLimit : MonoBehaviour
         if(collider.gameObject.CompareTag("Player"))
         {
             Agent agent = collider.gameObject.GetComponent<Agent>();
+
+            agent.damageManager.GetHit(1);
+
             agent.Die();
         }
     }

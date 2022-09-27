@@ -13,6 +13,8 @@ public class Agent : MonoBehaviour
     [HideInInspector] public ClimbDetector climbDetector;
     [HideInInspector] public WeaponManager weaponManager;
     [HideInInspector] public StateManager stateManager;
+    [HideInInspector] public DamageManager damageManager;
+
     AgentRenderer agentRenderer;
 
     [SerializeField] public MovementData movementData;
@@ -32,6 +34,9 @@ public class Agent : MonoBehaviour
 
         stateManager = GetComponentInChildren<StateManager>();
         stateManager.Initialize(this);
+
+        damageManager = GetComponentInChildren<DamageManager>();
+        damageManager.Initialize(agentData.maxHealth);
     }
 
     void Update()
@@ -50,8 +55,7 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += agentRenderer.FaceDirection;
-
-        stateManager.TransitionToState(StateType.Idle);
+        Initialize();
     }
 
     void HandleMovement(Vector2 movement)
@@ -62,5 +66,10 @@ public class Agent : MonoBehaviour
     public void Die()
     {
         PlayerSpawnManager.instance.SpawnPlayer();
+    }
+
+    public void Initialize()
+    {
+        stateManager.TransitionToState(StateType.Idle);
     }
 }
