@@ -74,4 +74,9 @@ public class RunState : State
         if(agent.weaponManager.CanAttack())
             agent.stateManager.TransitionToState(StateType.Attack);
     }
+
+    protected override void HandleHit()
+    {
+        agent.stateManager.TransitionToState(StateType.Hit);
+    }
 }

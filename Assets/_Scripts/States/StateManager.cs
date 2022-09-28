@@ -21,6 +21,8 @@ public class StateManager : MonoBehaviour
 
     public void TransitionToState(StateType stateType)
     {
+        Debug.Log($"TransitionToState({stateType})");
+
         currentState?.Exit();
         currentState = GetStateByType(stateType);
         currentState?.Enter();

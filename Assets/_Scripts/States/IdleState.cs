@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IdleState : State
 {
-
     public override StateType Type()
     {
         return StateType.Idle;
@@ -44,4 +43,8 @@ public class IdleState : State
             agent.stateManager.TransitionToState(StateType.Jump);
     }
 
+    protected override void HandleHit()
+    {
+        agent.stateManager.TransitionToState(StateType.Hit);
+    }
 }

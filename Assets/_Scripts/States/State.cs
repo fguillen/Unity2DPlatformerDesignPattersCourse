@@ -22,6 +22,9 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnWeaponChange += HandleWeaponChange;
         this.agent.agentInput.OnMovement += HandleMovement;
 
+        this.agent.damageManager.OnHit.AddListener(HandleHit);
+        this.agent.damageManager.OnDie.AddListener(HandleDie);
+
         this.agent.agentAnimation.OnAnimationAction += HandleAnimationAction;
         this.agent.agentAnimation.OnAnimationEnd += HandleAnimationEnd;
 
@@ -36,6 +39,9 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnWeaponChange -= HandleWeaponChange;
         this.agent.agentInput.OnMovement -= HandleMovement;
 
+        this.agent.damageManager.OnHit.RemoveListener(HandleHit);
+        this.agent.damageManager.OnDie.RemoveListener(HandleDie);
+
         this.agent.agentAnimation.OnAnimationAction -= HandleAnimationAction;
         this.agent.agentAnimation.OnAnimationEnd -= HandleAnimationEnd;
 
@@ -47,6 +53,9 @@ public abstract class State : MonoBehaviour
     protected virtual void HandleJumpPressed() {}
     protected virtual void HandleJumpReleased() {}
     protected virtual void HandleWeaponChange() {}
+
+    protected virtual void HandleHit() {}
+    protected virtual void HandleDie() {}
 
     protected virtual void EnterState() {}
     protected virtual void ExitState() {}

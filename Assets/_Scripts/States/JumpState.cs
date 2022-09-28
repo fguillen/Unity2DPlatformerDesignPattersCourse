@@ -50,7 +50,10 @@ public class JumpState : RunState
         jumpPressed = false;
     }
 
-
+    protected override void HandleHit()
+    {
+        agent.stateManager.TransitionToState(StateType.Hit);
+    }
 
 
 }

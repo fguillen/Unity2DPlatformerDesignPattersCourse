@@ -23,19 +23,14 @@ public class DamageManager : MonoBehaviour, IHittable
 
     public void GetHit(int damage)
     {
-        OnHit?.Invoke();
-
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
 
         OnHealthChange?.Invoke(currentHealth);
 
         if(currentHealth == 0)
-            Die();
-    }
-
-    void Die()
-    {
-        OnDie?.Invoke();
+            OnDie?.Invoke();
+        else
+            OnHit?.Invoke();
     }
 }
