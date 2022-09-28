@@ -311,6 +311,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a268fe15efc40c29987c0bce0387f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3920116512969186346}
+        m_TargetAssemblyTypeName: AudioClipPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4318561116038862822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +338,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf565db0b95c42e8bf621d9e64d41c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4801291374425970989}
+        m_TargetAssemblyTypeName: AudioClipPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3358798064184700453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,7 +962,6 @@ GameObject:
   - component: {fileID: 7789505558502251823}
   - component: {fileID: 7789505558502251809}
   - component: {fileID: 7789505558502251810}
-  - component: {fileID: 7789505558502251811}
   m_Layer: 15
   m_Name: Agent
   m_TagString: Player
@@ -1030,14 +1059,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2127321, y: 1.3456892}
   m_EdgeRadius: 0
---- !u!81 &7789505558502251811
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7789505558502251822}
-  m_Enabled: 1
 --- !u!1001 &3097509948971558192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1048,7 +1069,7 @@ PrefabInstance:
     - target: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
       propertyPath: audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 05661ee73f978f8408a550c8ede19474, type: 3}
+      objectReference: {fileID: 8300000, guid: f25b087c805825847b8e4c620d9bc989, type: 3}
     - target: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
       propertyPath: audioSource
       value: 
@@ -1108,6 +1129,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5697609595463482187, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
   m_PrefabInstance: {fileID: 3097509948971558192}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3920116512969186346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
+  m_PrefabInstance: {fileID: 3097509948971558192}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99a498a103284e5ca2c3994b4cf0152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6789740216586690615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,6 +1210,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5697609595463482187, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
   m_PrefabInstance: {fileID: 6789740216586690615}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4801291374425970989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
+  m_PrefabInstance: {fileID: 6789740216586690615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99a498a103284e5ca2c3994b4cf0152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7708806968277668773
 PrefabInstance:
   m_ObjectHideFlags: 0
