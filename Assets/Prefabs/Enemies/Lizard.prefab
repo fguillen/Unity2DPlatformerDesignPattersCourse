@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &996967162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 996967163}
+  m_Layer: 0
+  m_Name: Behaiours
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &996967163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996967162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1349908617}
+  m_Father: {fileID: 1187716048790755958}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1349908615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349908617}
+  - component: {fileID: 1349908616}
+  m_Layer: 0
+  m_Name: Patrol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349908617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349908615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 996967163}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349908616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349908615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0297a39828ea45e8b183f1ae5771353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187716048790755961
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1187716048790755958}
   - component: {fileID: 1187716048790755956}
-  - component: {fileID: 7225983527474519776}
+  - component: {fileID: 1171498968}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -30,6 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8962866382358449158}
+  - {fileID: 996967163}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
---- !u!114 &7225983527474519776
+--- !u!114 &1171498968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,9 +131,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1187716048790755961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0297a39828ea45e8b183f1ae5771353, type: 3}
+  m_Script: {fileID: 11500000, guid: c99669399c0bf43e68308946804ab824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  attackBehaviour: {fileID: 1349908616}
+  patrolBehaviour: {fileID: 1349908616}
 --- !u!1001 &1187716048949940518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73,6 +151,18 @@ PrefabInstance:
     - target: {fileID: 1192483405, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Offset.x
       value: -0.38693404
+      objectReference: {fileID: 0}
+    - target: {fileID: 564869360906991563, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: obstacleFound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846979425842266284, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: obstacleFound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236291919777241031, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: obstacleFound
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
