@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayerSpawn;
 using WeaponSystem;
+using Sensors;
 
 public class Agent : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Agent : MonoBehaviour
     [HideInInspector] public AgentAnimation agentAnimation;
     [HideInInspector] public GroundDetector groundDetector;
     [HideInInspector] public ClimbDetector climbDetector;
+    [HideInInspector] public WallInFrontSensor wallInFrontSensor;
+    [HideInInspector] public EndOfGroundSensor endOfGroundSensor;
     [HideInInspector] public WeaponManager weaponManager;
     [HideInInspector] public StateManager stateManager;
     [HideInInspector] public DamageManager damageManager;
@@ -28,6 +31,8 @@ public class Agent : MonoBehaviour
         agentRenderer = GetComponentInChildren<AgentRenderer>();
         groundDetector = GetComponentInChildren<GroundDetector>();
         climbDetector = GetComponentInChildren<ClimbDetector>();
+        wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
+        endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();
 
         weaponManager = GetComponentInChildren<WeaponManager>();
         weaponManager.Initialize(this);

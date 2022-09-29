@@ -1,43 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-// using UnityEngine.Physics2D;
+using Sensors;
 
 public class GroundDetector : MonoBehaviour
 {
-    [SerializeField] BoxCollider2D templateCollider;
-    [SerializeField] BoxCollider2D insideCollider;
-    [SerializeField] LayerMask groundMask;
-    public bool isGrounded;
+    List<ObstacleSensor> obstacleSensors;
+    Collider2D insideCollider;
+
+    public bool isGrounded { get; private set; }
+
+    void Awake()
+    {
+        obstacleSensors = GetComponentsInChildren<ObstacleSensor>().ToList();
+        insideCollider = GetComponent<Collider2D>();
+    }
+
+    // public void DetectGrounded()
+    // {
+    //     Debug.Log($"DetectGrounded: {Center()}, {Size()}");
+
+    //     RaycastHit2D hit =
+    //         Physics2D.BoxCast(
+    //             Center(),
+    //             Size(),
+    //             0f,
+    //             Vector2.down,
+    //             0f,
+    //             groundMask
+    //         );
+
+    //     if(hit.collider != null)
+    //     {
+    //         Debug.Log($"DetectGrounded Hit!");
+    //         if(!hit.collider.IsTouching(insideCollider))
+    //             isGrounded = true;
+    //     }
+
+    //     else
+    //         isGrounded = false;
+    // }
 
     public void DetectGrounded()
     {
-        RaycastHit2D hit =
-            Physics2D.BoxCast(
-                (Vector2)templateCollider.bounds.center + templateCollider.offset,
-                templateCollider.size,
-                0f,
-                Vector2.down,
-                0f,
-                groundMask
-            );
+        isGrounded = false;
 
-        if(hit.collider != null)
+        foreach (var obstacleSensor in obstacleSensors)
         {
-            if(!hit.collider.IsTouching(insideCollider))
+            if(obstacleSensor.ObstacleFound() && !obstacleSensor.hit.collider.IsTouching(insideCollider))
+            {
                 isGrounded = true;
+                break;
+            }
         }
-
-        else
-            isGrounded = false;
-    }
-
-
-    void OnDrawGizmos()
-    {
-        Color groundedColor = Color.green;
-        Color noGroundedColor = Color.red;
-        Gizmos.color = isGrounded ? groundedColor : noGroundedColor;
-        Gizmos.DrawWireCube((Vector2)templateCollider.bounds.center + templateCollider.offset, templateCollider.size);
     }
 }
