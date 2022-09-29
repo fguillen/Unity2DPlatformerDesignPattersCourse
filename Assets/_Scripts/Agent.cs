@@ -7,7 +7,7 @@ using WeaponSystem;
 public class Agent : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb2d;
-    [HideInInspector] public PlayerInput agentInput;
+    [HideInInspector] public IAgentInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
     [HideInInspector] public GroundDetector groundDetector;
     [HideInInspector] public ClimbDetector climbDetector;
@@ -23,7 +23,7 @@ public class Agent : MonoBehaviour
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        agentInput = GetComponentInParent<PlayerInput>();
+        agentInput = GetComponentInParent<IAgentInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
         groundDetector = GetComponentInChildren<GroundDetector>();

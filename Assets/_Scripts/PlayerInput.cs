@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IAgentInput
 {
     [field: SerializeField] public Vector2 MovementVector { get; private set; }
-
-    public event Action OnAttack, OnJumpPressed, OnJumpReleased, OnWeaponChange;
+    public event Action OnAttack;
+    public event Action OnJumpPressed;
+    public event Action OnJumpReleased;
+    public event Action OnWeaponChange;
     public event Action<Vector2> OnMovement;
     public KeyCode jumpKey, attackKey, menuKey;
     public UnityEvent OnMenuKeyPressed;
