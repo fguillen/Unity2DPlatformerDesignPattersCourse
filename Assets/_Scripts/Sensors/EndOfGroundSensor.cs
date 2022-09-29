@@ -11,7 +11,7 @@ namespace Sensors
 
         public bool EndOfGround()
         {
-            return ObstacleFound();
+            return !ObstacleFound();
         }
     }
 }

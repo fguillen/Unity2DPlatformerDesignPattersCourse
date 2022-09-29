@@ -13,11 +13,11 @@ namespace AI
         public event Action OnWeaponChange;
         public event Action<Vector2> OnMovement;
 
-        public Agent agent;
+        [HideInInspector] public Agent agent;
 
-        public void Initialize(Agent agent)
+        void Awake()
         {
-            this.agent = agent;
+            this.agent = GetComponentInChildren<Agent>();
         }
 
         public void CallOnAttack()

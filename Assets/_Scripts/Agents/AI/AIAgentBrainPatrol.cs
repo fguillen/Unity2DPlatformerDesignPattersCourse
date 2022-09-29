@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace AI
 {
-    public abstract class AIAgentBrainPatrolling : AIAgentBrain
+    public class AIAgentBrainPatrol : AIAgentBrain
     {
-        AIBehaviour attackBehaviour;
-        AIBehaviour patrolBehaviour;
+        [SerializeField] AIBehaviour attackBehaviour;
+        [SerializeField] AIBehaviour patrolBehaviour;
 
         void Update()
         {
