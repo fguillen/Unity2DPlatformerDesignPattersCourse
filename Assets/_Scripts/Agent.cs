@@ -10,9 +10,10 @@ public class Agent : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb2d;
     [HideInInspector] public IAgentInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
-    [HideInInspector] public GroundDetector groundDetector;
-    [HideInInspector] public ClimbDetector climbDetector;
+    [HideInInspector] public GroundSensor groundSensor;
+    [HideInInspector] public ClimbSensor climbSensor;
     [HideInInspector] public WallInFrontSensor wallInFrontSensor;
+    [HideInInspector] public PlayerInFrontSensor playerInFrontSensor;
     [HideInInspector] public EndOfGroundSensor endOfGroundSensor;
     [HideInInspector] public WeaponManager weaponManager;
     [HideInInspector] public StateManager stateManager;
@@ -29,9 +30,10 @@ public class Agent : MonoBehaviour
         agentInput = GetComponentInParent<IAgentInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
-        groundDetector = GetComponentInChildren<GroundDetector>();
-        climbDetector = GetComponentInChildren<ClimbDetector>();
+        groundSensor = GetComponentInChildren<GroundSensor>();
+        climbSensor = GetComponentInChildren<ClimbSensor>();
         wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
+        playerInFrontSensor = GetComponentInChildren<PlayerInFrontSensor>();
         endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();
 
         weaponManager = GetComponentInChildren<WeaponManager>();
@@ -51,7 +53,7 @@ public class Agent : MonoBehaviour
 
     void FixedUpdate()
     {
-        groundDetector.DetectGrounded();
+        groundSensor.DetectGrounded();
         stateManager.currentState?.StateFixedUpdate();
     }
 

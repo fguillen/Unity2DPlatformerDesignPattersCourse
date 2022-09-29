@@ -11,7 +11,7 @@ namespace WeaponSystem
 
         public override bool CanBeUsed(Agent agent)
         {
-            return agent.groundDetector.isGrounded;
+            return agent.groundSensor.isGrounded;
         }
 
         public override void Attack(Agent agent)

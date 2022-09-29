@@ -20,27 +20,27 @@ namespace AI
             this.agent = GetComponentInChildren<Agent>();
         }
 
-        public void CallOnAttack()
+        public void CallAttack()
         {
             OnAttack?.Invoke();
         }
 
-        public void CallOnJumpPressed()
+        public void CallJumpPressed()
         {
             OnJumpPressed?.Invoke();
         }
 
-        public void CallOnJumpReleased()
+        public void CallJumpReleased()
         {
             OnJumpReleased?.Invoke();
         }
 
-        public void CallOnWeaponChange()
+        public void CallWeaponChange()
         {
             OnWeaponChange?.Invoke();
         }
 
-        public void CallOnMovement(Vector2 vector)
+        public void CallMovement(Vector2 vector)
         {
             OnMovement?.Invoke(vector);
         }

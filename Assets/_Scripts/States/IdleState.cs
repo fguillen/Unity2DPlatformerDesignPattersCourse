@@ -13,7 +13,7 @@ public class IdleState : State
     {
         agent.agentAnimation.PlayAnimation(AnimationType.idle);
 
-        if(agent.groundDetector.isGrounded)
+        if(agent.groundSensor.isGrounded)
             agent.rb2d.velocity = Vector2.zero;
     }
 
@@ -21,7 +21,7 @@ public class IdleState : State
     {
         if(Mathf.Abs(movement.x) > 0)
             agent.stateManager.TransitionToState(StateType.Run);
-        else if(Mathf.Abs(movement.y) > 0 && agent.climbDetector.canClimb)
+        else if(Mathf.Abs(movement.y) > 0 && agent.climbSensor.canClimb)
             agent.stateManager.TransitionToState(StateType.Climb);
     }
 
@@ -33,13 +33,13 @@ public class IdleState : State
 
     public override void StateFixedUpdate()
     {
-        if(!agent.groundDetector.isGrounded)
+        if(!agent.groundSensor.isGrounded)
             agent.stateManager.TransitionToState(StateType.Fall);
     }
 
     protected override void HandleJumpPressed()
     {
-        if(agent.groundDetector.isGrounded)
+        if(agent.groundSensor.isGrounded)
             agent.stateManager.TransitionToState(StateType.Jump);
     }
 

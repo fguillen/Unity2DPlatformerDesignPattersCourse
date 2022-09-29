@@ -19,14 +19,14 @@ public class FallState : RunState
 
     protected override void ExitState()
     {
-        if(agent.groundDetector.isGrounded)
+        if(agent.groundSensor.isGrounded)
             OnLand?.Invoke();
     }
 
 
     public override void StateUpdate()
     {
-        if(agent.climbDetector.canClimb && agent.movementData.agentMovementAbs.y > 0)
+        if(agent.climbSensor.canClimb && agent.movementData.agentMovementAbs.y > 0)
             agent.stateManager.TransitionToState(StateType.Climb);
     }
 
@@ -35,7 +35,7 @@ public class FallState : RunState
         ApplyFallForce();
         SetPlayerVelocity();
 
-        if(agent.groundDetector.isGrounded)
+        if(agent.groundSensor.isGrounded)
             agent.stateManager.TransitionToState(StateType.Idle);
     }
 

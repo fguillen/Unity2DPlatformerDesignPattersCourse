@@ -31,7 +31,7 @@ public class ClimbState : State
 
     public override void StateFixedUpdate()
     {
-        if(!agent.climbDetector.canClimb)
+        if(!agent.climbSensor.canClimb)
         {
             agent.stateManager.TransitionToState(StateType.Idle);
             return;

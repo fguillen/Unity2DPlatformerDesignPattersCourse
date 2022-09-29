@@ -14,16 +14,13 @@ namespace AI
 
         public override void Perform(AIAgentBrain aiAgentBrain)
         {
-            Debug.Log($"Perform {aiAgentBrain.agent.wallInFrontSensor.WallInFront()}, {aiAgentBrain.agent.endOfGroundSensor.EndOfGround()}");
-
-
             if(
                 aiAgentBrain.agent.wallInFrontSensor.WallInFront() ||
                 aiAgentBrain.agent.endOfGroundSensor.EndOfGround()
             )
                 Turn();
 
-            aiAgentBrain.CallOnMovement(currentMovement);
+            aiAgentBrain.CallMovement(currentMovement);
         }
 
         void Turn()

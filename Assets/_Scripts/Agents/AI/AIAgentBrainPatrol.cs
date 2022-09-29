@@ -11,7 +11,7 @@ namespace AI
 
         void Update()
         {
-            if(agent.groundDetector.isGrounded)
+            if(agent.groundSensor.isGrounded)
             {
                 attackBehaviour.Perform(this);
                 patrolBehaviour.Perform(this);
