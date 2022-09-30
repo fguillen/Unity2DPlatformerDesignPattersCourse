@@ -6,8 +6,8 @@ namespace AI
     {
         Vector2 currentMovement;
 
-        float lastAttackAt;
-        float delayBetweenAttacks;
+        float lastAttackAt = 0;
+        [SerializeField] float delayBetweenAttacks = 1f;
 
         void Start()
         {
