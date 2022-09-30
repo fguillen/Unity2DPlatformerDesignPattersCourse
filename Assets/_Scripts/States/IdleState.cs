@@ -45,6 +45,8 @@ public class IdleState : State
 
     protected override void HandleHit()
     {
+        Debug.Log("IdleState.HandleHit()");
+
         agent.stateManager.TransitionToState(StateType.Hit);
     }
 }

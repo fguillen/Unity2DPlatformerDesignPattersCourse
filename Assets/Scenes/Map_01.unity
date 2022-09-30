@@ -2925,7 +2925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190199295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4400005, y: -1.141, z: -10}
+  m_LocalPosition: {x: 15, y: -1.081, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 571678895}
@@ -6340,7 +6340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104138378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29710484, y: 0.16471839, z: -10}
+  m_LocalPosition: {x: 15.003677, y: 0.11967027, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1977220302}
@@ -13267,10 +13267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1187716048790755956, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 290e1dc87f42a4c35aa5d30153c76a0a, type: 2}
     - target: {fileID: 1187716048790755958, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -13318,26 +13314,6 @@ PrefabInstance:
     - target: {fileID: 1187716048790755961, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
       propertyPath: m_Name
       value: Lizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187716048790755961, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8962866382825822252, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: drawGizmo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8962866382825822252, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: currentWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 290e1dc87f42a4c35aa5d30153c76a0a, type: 2}
-    - target: {fileID: 8962866382825822255, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.371
-      objectReference: {fileID: 0}
-    - target: {fileID: 8962866382825822255, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
@@ -13551,21 +13527,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3400507438895612198, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.31
+      value: 49.75
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.36
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13599,14 +13571,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: drawGizmo
+    - target: {fileID: 3400507439653431862, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: currentWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
+    - target: {fileID: 3400507439653431866, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4839370100047572308, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -23,6 +23,8 @@ public class DamageManager : MonoBehaviour, IHittable
 
     public void GetHit(int damage)
     {
+        Debug.Log($"GetHit({damage})");
+
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
 

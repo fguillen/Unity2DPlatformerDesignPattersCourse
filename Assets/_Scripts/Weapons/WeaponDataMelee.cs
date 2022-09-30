@@ -28,10 +28,11 @@ namespace WeaponSystem
 
             if(hit.collider != null)
             {
-                Debug.Log("Hitted something");
+                Debug.Log($"Hit something ({hit.collider.gameObject.tag})");
 
                 foreach (var hittable in hit.collider.GetComponents<IHittable>())
                 {
+                    Debug.Log($"Sending Hit");
                     hittable.GetHit(damage);
                 }
             }

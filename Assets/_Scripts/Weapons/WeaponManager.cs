@@ -52,7 +52,7 @@ namespace WeaponSystem
 
         void OnDrawGizmos()
         {
-            Debug.Log($"OnDrawGizmos({!drawGizmo}, {currentWeapon == null}, {!Application.isPlaying}, {agent == null})");
+            // Debug.Log($"OnDrawGizmos({!drawGizmo}, {currentWeapon == null}, {!Application.isPlaying}, {agent == null})");
 
             if(!drawGizmo || currentWeapon == null || !Application.isPlaying || agent == null)
                 return;
