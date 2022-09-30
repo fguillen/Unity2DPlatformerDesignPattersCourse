@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bf7d6fb5abd94555abfa6bb7a3b4396, type: 3}
-  m_Name: WeaponClub
+  m_Name: WeaponLizard
   m_EditorClassIdentifier: 
-  weaponName: Club
+  weaponName: Lizard
   damage: 1
-  sprite: {fileID: 21300000, guid: dc1a5260470ab9d43a040c4e9c89bead, type: 3}
+  sprite: {fileID: 0}
   soundEffect: {fileID: 0}
   hittableMask:
     serializedVersion: 2
-    m_Bits: 147968
+    m_Bits: 180736
   range: 1

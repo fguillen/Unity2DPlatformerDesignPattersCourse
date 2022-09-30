@@ -52,7 +52,9 @@ namespace WeaponSystem
 
         void OnDrawGizmos()
         {
-            if(!drawGizmo || currentWeapon == null || Application.isPlaying || agent == null)
+            Debug.Log($"OnDrawGizmos({!drawGizmo}, {currentWeapon == null}, {!Application.isPlaying}, {agent == null})");
+
+            if(!drawGizmo || currentWeapon == null || !Application.isPlaying || agent == null)
                 return;
 
             Gizmos.color = Color.red;

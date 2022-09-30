@@ -141,6 +141,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.613
       objectReference: {fileID: 0}
+    - target: {fileID: 564869360906991563, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: obstacleFound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1180416559682132167, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -153,6 +157,10 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: f25b087c805825847b8e4c620d9bc989, type: 3}
+    - target: {fileID: 6236291919777241031, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: obstacleFound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7789505557465438934, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Size.x
       value: 0.5407398
