@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HitState : State
+public class HittedState : State
 {
     public UnityEvent OnHit;
 
@@ -21,7 +21,7 @@ public class HitState : State
 
     protected override void HandleAnimationEnd()
     {
-        Debug.Log("HitState.HandleAnimationEnd()");
+        Debug.Log("HittedState.HandleAnimationEnd()");
 
         agent.stateManager.TransitionToState(StateType.Idle);
     }

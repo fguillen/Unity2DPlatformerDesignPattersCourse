@@ -19,7 +19,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public StateManager stateManager;
     [HideInInspector] public DamageManager damageManager;
 
-    SpriteFlipper SpriteFlipper;
+    SpriteFlipper spriteFlipper;
 
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
@@ -29,7 +29,7 @@ public class Agent : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         agentInput = GetComponentInParent<IAgentInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
-        SpriteFlipper = GetComponentInChildren<SpriteFlipper>();
+        spriteFlipper = GetComponentInChildren<SpriteFlipper>();
         groundSensor = GetComponentInChildren<GroundSensor>();
         climbSensor = GetComponentInChildren<ClimbSensor>();
         wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
@@ -60,7 +60,7 @@ public class Agent : MonoBehaviour
     void Start()
     {
         agentInput.OnMovement += HandleMovement;
-        agentInput.OnMovement += SpriteFlipper.FaceDirection;
+        agentInput.OnMovement += spriteFlipper.FaceDirection;
         Initialize();
     }
 

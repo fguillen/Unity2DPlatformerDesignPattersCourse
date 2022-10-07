@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -10,7 +11,7 @@ public class StateManager : MonoBehaviour
 
     void Awake()
     {
-        states = GetComponents<State>().ToList();
+        states = GetComponentsInChildren<State>().ToList();
     }
 
     public void Initialize(Agent agent)
@@ -25,7 +26,11 @@ public class StateManager : MonoBehaviour
 
         currentState?.Exit();
         currentState = GetStateByType(stateType);
-        currentState?.Enter();
+
+        if(currentState == null)
+            throw new ArgumentException($"State not found: '{stateType}'");
+
+        currentState.Enter();
     }
 
     State GetStateByType(StateType type)
