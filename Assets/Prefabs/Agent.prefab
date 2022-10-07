@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93474f0ad7b6f4e8f87efe00c8b222c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -164,7 +163,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 865004398534162470}
-  endOfGround: 0
+  checkIntervalSeconds: 0.1
 --- !u!1 &4184462050078981100
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +175,7 @@ GameObject:
   - component: {fileID: 9207197745982923840}
   - component: {fileID: 3579791776508281215}
   - component: {fileID: 687839270024893662}
+  - component: {fileID: 2977537206805740584}
   m_Layer: 15
   m_Name: Sensor1
   m_TagString: Untagged
@@ -210,7 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -218,6 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 8143448878231341205}
+  checkIntervalSeconds: 0.1
 --- !u!114 &687839270024893662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -238,6 +237,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 8143448878231341205}
+  checkIntervalSeconds: 0.1
+--- !u!114 &2977537206805740584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184462050078981100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 8143448878231341205}
+  checkIntervalSeconds: 0.1
 --- !u!1 &5616716677375464139
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +269,7 @@ GameObject:
   - component: {fileID: 536185400294467224}
   - component: {fileID: 8715390305287878425}
   - component: {fileID: 803302443764864786}
+  - component: {fileID: 7427757232947910280}
   m_Layer: 15
   m_Name: Sensor2
   m_TagString: Untagged
@@ -283,7 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -291,6 +311,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 7297176721355216476}
+  checkIntervalSeconds: 0.1
 --- !u!114 &803302443764864786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -311,6 +331,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 7297176721355216476}
+  checkIntervalSeconds: 0.1
+--- !u!114 &7427757232947910280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616716677375464139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 7297176721355216476}
+  checkIntervalSeconds: 0.1
 --- !u!1 &5971997056778493852
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: []
-  currentState: {fileID: 0}
 --- !u!1 &7789505557465438930
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bdb4a253ff77409e8fc8dfd1d8e7326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkIntervalSeconds: 0.1
 --- !u!61 &7789505557465438934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1069,6 +1110,7 @@ GameObject:
   - component: {fileID: 7789505558182173912}
   - component: {fileID: 3861476270691961435}
   - component: {fileID: 6754438578148028962}
+  - component: {fileID: 1116059106419936365}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1186,6 +1228,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6754438578148028962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789505558182173892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7893642150cef4235b43104f026f2fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1116059106419936365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1351,7 +1405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d3fb6be51664c8e89cd0ab464883bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -1359,7 +1412,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   limit: {fileID: 4694454333878638032}
-  wallInFront: 0
+  checkIntervalSeconds: 0.1
 --- !u!1 &8383642057355164131
 GameObject:
   m_ObjectHideFlags: 0

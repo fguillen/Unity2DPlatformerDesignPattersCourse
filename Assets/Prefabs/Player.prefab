@@ -74,6 +74,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3400507438895612200}
     m_Modifications:
     - target: {fileID: 1192483402, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192483402, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -146,6 +150,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1180416559682132167, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Name
+      value: EndOfGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180416559682132167, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -160,6 +168,10 @@ PrefabInstance:
     - target: {fileID: 6236291919777241031, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: obstacleFound
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557465438930, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Name
+      value: Gound
       objectReference: {fileID: 0}
     - target: {fileID: 7789505557465438934, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Size.x
@@ -176,6 +188,14 @@ PrefabInstance:
     - target: {fileID: 7789505557465438934, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Offset.y
       value: -0.046646714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557633891968, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Name
+      value: Climb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557712592146, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Name
+      value: GoundCollider
       objectReference: {fileID: 0}
     - target: {fileID: 7789505557712592148, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Size.x
@@ -262,6 +282,10 @@ PrefabInstance:
       value: 1.153816
       objectReference: {fileID: 0}
     - target: {fileID: 7789505558502251810, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505558502251810, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Offset.x
       value: -0.03898883
       objectReference: {fileID: 0}
@@ -276,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019633527222749455, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Name
+      value: WallInFront
       objectReference: {fileID: 0}
     - target: {fileID: 8019633527222749455, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
