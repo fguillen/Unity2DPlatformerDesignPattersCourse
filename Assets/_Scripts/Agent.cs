@@ -53,7 +53,6 @@ public class Agent : MonoBehaviour
 
     void FixedUpdate()
     {
-        groundSensor.DetectGrounded();
         stateManager.currentState?.StateFixedUpdate();
     }
 
