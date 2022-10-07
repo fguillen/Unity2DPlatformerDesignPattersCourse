@@ -14,6 +14,16 @@ public class StateManager : MonoBehaviour
         states = GetComponentsInChildren<State>().ToList();
     }
 
+    void Update()
+    {
+        currentState?.StateUpdate();
+    }
+
+    void FixedUpdate()
+    {
+        currentState?.StateFixedUpdate();
+    }
+
     public void Initialize(Agent agent)
     {
         foreach (var state in states)

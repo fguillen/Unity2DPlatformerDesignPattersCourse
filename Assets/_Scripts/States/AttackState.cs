@@ -29,7 +29,7 @@ public class AttackState : State
         agent.stateManager.TransitionToState(StateType.Idle);
     }
 
-    protected override void HandleHit()
+    protected override void HandleHitted()
     {
         agent.stateManager.TransitionToState(StateType.Hit);
     }

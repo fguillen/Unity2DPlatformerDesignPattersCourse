@@ -44,7 +44,7 @@ public class FallState : RunState
         agent.rb2d.AddForce(Vector2.down * agent.agentData.fallForce, ForceMode2D.Force);
     }
 
-    protected override void HandleHit()
+    protected override void HandleHitted()
     {
         agent.stateManager.TransitionToState(StateType.Hit);
     }

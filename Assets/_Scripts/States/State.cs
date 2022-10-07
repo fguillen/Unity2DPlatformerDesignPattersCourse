@@ -22,7 +22,7 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnWeaponChange += HandleWeaponChange;
         this.agent.agentInput.OnMovement += HandleMovement;
 
-        this.agent.damageManager.OnHit.AddListener(HandleHit);
+        this.agent.damageManager.OnHit.AddListener(HandleHitted);
         this.agent.damageManager.OnDie.AddListener(HandleDie);
 
         this.agent.agentAnimation.OnAnimationAction += HandleAnimationAction;
@@ -39,7 +39,7 @@ public abstract class State : MonoBehaviour
         this.agent.agentInput.OnWeaponChange -= HandleWeaponChange;
         this.agent.agentInput.OnMovement -= HandleMovement;
 
-        this.agent.damageManager.OnHit.RemoveListener(HandleHit);
+        this.agent.damageManager.OnHit.RemoveListener(HandleHitted);
         this.agent.damageManager.OnDie.RemoveListener(HandleDie);
 
         this.agent.agentAnimation.OnAnimationAction -= HandleAnimationAction;
@@ -48,17 +48,17 @@ public abstract class State : MonoBehaviour
         ExitState();
     }
 
+    protected virtual void EnterState() {}
+    protected virtual void ExitState() {}
+
     protected virtual void HandleMovement(Vector2 movement) {}
     protected virtual void HandleAttack() {}
     protected virtual void HandleJumpPressed() {}
     protected virtual void HandleJumpReleased() {}
     protected virtual void HandleWeaponChange() {}
 
-    protected virtual void HandleHit() {}
+    protected virtual void HandleHitted() {}
     protected virtual void HandleDie() {}
-
-    protected virtual void EnterState() {}
-    protected virtual void ExitState() {}
 
     protected virtual void HandleAnimationAction() {}
     protected virtual void HandleAnimationEnd() {}

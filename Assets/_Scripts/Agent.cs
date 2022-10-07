@@ -46,16 +46,6 @@ public class Agent : MonoBehaviour
         damageManager.Initialize(agentData.maxHealth);
     }
 
-    void Update()
-    {
-        stateManager.currentState?.StateUpdate();
-    }
-
-    void FixedUpdate()
-    {
-        stateManager.currentState?.StateFixedUpdate();
-    }
-
     // Start is called before the first frame update
     void Start()
     {

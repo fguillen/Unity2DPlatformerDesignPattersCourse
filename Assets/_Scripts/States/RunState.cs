@@ -75,7 +75,7 @@ public class RunState : State
             agent.stateManager.TransitionToState(StateType.Attack);
     }
 
-    protected override void HandleHit()
+    protected override void HandleHitted()
     {
         agent.stateManager.TransitionToState(StateType.Hit);
     }

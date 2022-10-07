@@ -61,7 +61,7 @@ public class ClimbState : State
         agent.stateManager.TransitionToState(StateType.Jump);
     }
 
-    protected override void HandleHit()
+    protected override void HandleHitted()
     {
         agent.stateManager.TransitionToState(StateType.Hit);
     }
