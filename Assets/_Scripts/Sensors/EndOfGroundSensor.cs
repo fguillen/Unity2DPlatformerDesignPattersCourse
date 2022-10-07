@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Sensors
 {
-    public class EndOfGroundSensor : ObstacleSensor
+    public class EndOfGroundSensor : RaySensor
     {
         public bool endOfGround;
 

@@ -7,14 +7,14 @@ namespace Sensors
 {
     public class GroundSensor : MonoBehaviour
     {
-        List<ObstacleSensor> obstacleSensors;
+        List<RaySensor> RaySensors;
         Collider2D insideCollider;
 
         public bool isGrounded { get; private set; }
 
         void Awake()
         {
-            obstacleSensors = GetComponentsInChildren<ObstacleSensor>().ToList();
+            RaySensors = GetComponentsInChildren<RaySensor>().ToList();
             insideCollider = GetComponent<Collider2D>();
         }
 
@@ -22,9 +22,9 @@ namespace Sensors
         {
             isGrounded = false;
 
-            foreach (var obstacleSensor in obstacleSensors)
+            foreach (var RaySensor in RaySensors)
             {
-                if(obstacleSensor.ObstacleFound() && !obstacleSensor.hit.collider.IsTouching(insideCollider))
+                if(RaySensor.ObstacleFound() && !RaySensor.hit.collider.IsTouching(insideCollider))
                 {
                     isGrounded = true;
                     break;

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Sensors
 {
-    public class WallInFrontSensor: ObstacleSensor
+    public class WallInFrontSensor: RaySensor
     {
         public bool wallInFront;
 

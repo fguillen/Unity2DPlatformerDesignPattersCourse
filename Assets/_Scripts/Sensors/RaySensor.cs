@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Sensors
 {
-    public class ObstacleSensor : MonoBehaviour
+    public class RaySensor : MonoBehaviour
     {
         public bool obstacleFound;
 

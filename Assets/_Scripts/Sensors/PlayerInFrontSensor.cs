@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sensors
 {
-    public class PlayerInFrontSensor: ObstacleSensor
+    public class PlayerInFrontSensor: RaySensor
     {
         public bool playerInFront;
 

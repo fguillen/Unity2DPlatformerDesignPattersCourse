@@ -5435,6 +5435,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &605531802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070294821560821203, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+  m_PrefabInstance: {fileID: 3400507438459064816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &605531804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605531802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleFound: 0
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 1997703929}
 --- !u!1 &718583141
 GameObject:
   m_ObjectHideFlags: 0
@@ -5655,6 +5680,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d223419e8be174d0490b2400f1b8b80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &881670195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8962866383214874082, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
+  m_PrefabInstance: {fileID: 1187716049825938862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &881670197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881670195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7893642150cef4235b43104f026f2fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &881766998
@@ -6260,6 +6302,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7005250554847321036, guid: 0a5afe6bf43fe4b2e9e5881236fa9077, type: 3}
   m_PrefabInstance: {fileID: 993858968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1100645350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3615179856391765901, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+  m_PrefabInstance: {fileID: 3400507438459064816}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104138378
 GameObject:
@@ -10465,6 +10512,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1514718044607209621, guid: 936ca67a8a5f944fca8b635e94a963bc, type: 3}
   m_PrefabInstance: {fileID: 1589682715}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1591301294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8735531266598227188, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+  m_PrefabInstance: {fileID: 3400507438459064816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591301296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591301294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleFound: 0
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 1100645350}
 --- !u!1 &1628718890
 GameObject:
   m_ObjectHideFlags: 0
@@ -13098,6 +13170,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1997703929 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2768626250238402884, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+  m_PrefabInstance: {fileID: 3400507438459064816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017987700
 GameObject:
   m_ObjectHideFlags: 0
@@ -13315,7 +13392,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lizard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1187716048790755961, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8962866383214874111, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
 --- !u!1001 &1514718044936396414
 PrefabInstance:
@@ -13601,6 +13683,8 @@ PrefabInstance:
       objectReference: {fileID: 1863015781}
     m_RemovedComponents:
     - {fileID: 3400507439333354433, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+    - {fileID: 1559132788548870367, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+    - {fileID: 4971469071786983635, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
 --- !u!1 &3400507438459064817 stripped
 GameObject:

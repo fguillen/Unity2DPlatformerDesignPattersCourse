@@ -174,7 +174,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9207197745982923840}
-  - component: {fileID: 6236291919777241031}
+  - component: {fileID: 3579791776508281215}
+  - component: {fileID: 687839270024893662}
   m_Layer: 15
   m_Name: Sensor1
   m_TagString: Untagged
@@ -197,7 +198,7 @@ Transform:
   m_Father: {fileID: 7789505557465438931}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6236291919777241031
+--- !u!114 &3579791776508281215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,11 +207,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4184462050078981100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6cf2359bf82403d95193b95c525bfe, type: 3}
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 1
-  drawGizmos: 1
+  obstacleFound: 0
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 8143448878231341205}
+--- !u!114 &687839270024893662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184462050078981100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleFound: 0
+  drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
   groundLayerMask:
@@ -226,7 +247,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536185400294467224}
-  - component: {fileID: 564869360906991563}
+  - component: {fileID: 8715390305287878425}
+  - component: {fileID: 803302443764864786}
   m_Layer: 15
   m_Name: Sensor2
   m_TagString: Untagged
@@ -249,7 +271,7 @@ Transform:
   m_Father: {fileID: 7789505557465438931}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &564869360906991563
+--- !u!114 &8715390305287878425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,11 +280,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5616716677375464139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6cf2359bf82403d95193b95c525bfe, type: 3}
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 1
-  drawGizmos: 1
+  obstacleFound: 0
+  drawGizmos: 0
+  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
+  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 133184
+  limit: {fileID: 7297176721355216476}
+--- !u!114 &803302443764864786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616716677375464139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleFound: 0
+  drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
   groundLayerMask:
@@ -1025,7 +1067,8 @@ GameObject:
   - component: {fileID: 7789505558182173894}
   - component: {fileID: 7789505558182173895}
   - component: {fileID: 7789505558182173912}
-  - component: {fileID: 7789505558182173913}
+  - component: {fileID: 3861476270691961435}
+  - component: {fileID: 6754438578148028962}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1130,7 +1173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d732f51562774149bce3afeced36d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7789505558182173913
+--- !u!114 &3861476270691961435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1139,7 +1182,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7789505558182173892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16342b6b150534269a136edf4a6de231, type: 3}
+  m_Script: {fileID: 11500000, guid: 7893642150cef4235b43104f026f2fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6754438578148028962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789505558182173892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7893642150cef4235b43104f026f2fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7789505558502251822
@@ -1219,6 +1274,7 @@ MonoBehaviour:
   groundSensor: {fileID: 0}
   climbSensor: {fileID: 0}
   wallInFrontSensor: {fileID: 0}
+  playerInFrontSensor: {fileID: 0}
   endOfGroundSensor: {fileID: 0}
   weaponManager: {fileID: 0}
   stateManager: {fileID: 0}
