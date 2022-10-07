@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class RunState : State
 {
-    public UnityEvent OnStep;
+    [SerializeField] private UnityEvent OnStep;
 
     public override StateType Type()
     {

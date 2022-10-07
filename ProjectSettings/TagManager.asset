@@ -20,7 +20,7 @@ TagManager:
   - SpawnPoint
   - Pickable
   - Enemies
-  - AgentCollider
+  - AgentGroundCollider
   - ScreenLimit
   - Obstacles
   - 
