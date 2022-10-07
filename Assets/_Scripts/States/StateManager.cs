@@ -6,7 +6,7 @@ public class StateManager : MonoBehaviour
 {
     [SerializeField] List<State> states;
 
-    public State currentState;
+    public State currentState { get; private set; }
 
     void Awake()
     {
