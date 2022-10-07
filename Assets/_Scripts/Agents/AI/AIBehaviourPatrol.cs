@@ -15,8 +15,8 @@ namespace AI
         public override void Perform(AIAgentBrain aiAgentBrain)
         {
             if(
-                aiAgentBrain.agent.wallInFrontSensor.WallInFront() ||
-                aiAgentBrain.agent.endOfGroundSensor.EndOfGround()
+                aiAgentBrain.agent.wallInFrontSensor.hasHit ||
+                !aiAgentBrain.agent.endOfGroundSensor.hasHit
             )
                 Turn();
 

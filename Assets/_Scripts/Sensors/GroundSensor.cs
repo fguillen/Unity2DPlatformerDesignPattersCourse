@@ -24,7 +24,7 @@ namespace Sensors
 
             foreach (var RaySensor in RaySensors)
             {
-                if(RaySensor.ObstacleFound() && !RaySensor.hit.collider.IsTouching(insideCollider))
+                if(RaySensor.hasHit && !RaySensor.hit.collider.IsTouching(insideCollider))
                 {
                     isGrounded = true;
                     break;

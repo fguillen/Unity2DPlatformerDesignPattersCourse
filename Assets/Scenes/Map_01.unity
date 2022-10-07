@@ -5452,7 +5452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -5460,6 +5459,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 1997703929}
+  checkIntervalSeconds: 0.1
 --- !u!1 &718583141
 GameObject:
   m_ObjectHideFlags: 0
@@ -10529,7 +10529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
@@ -10537,6 +10536,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 1100645350}
+  checkIntervalSeconds: 0.1
 --- !u!1 &1628718890
 GameObject:
   m_ObjectHideFlags: 0

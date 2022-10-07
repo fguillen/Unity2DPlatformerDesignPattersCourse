@@ -6,11 +6,5 @@ namespace Sensors
 {
     public class PlayerInFrontSensor: RaySensor
     {
-        public bool playerInFront;
-
-        public bool PlayerInFront()
-        {
-            return ObstacleFound();
-        }
     }
 }

@@ -7,11 +7,5 @@ namespace Sensors
 {
     public class EndOfGroundSensor : RaySensor
     {
-        public bool endOfGround;
-
-        public bool EndOfGround()
-        {
-            return !ObstacleFound();
-        }
     }
 }

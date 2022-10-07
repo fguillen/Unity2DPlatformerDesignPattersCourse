@@ -8,11 +8,5 @@ namespace Sensors
 {
     public class WallInFrontSensor: RaySensor
     {
-        public bool wallInFront;
-
-        public bool WallInFront()
-        {
-            return ObstacleFound();
-        }
     }
 }
