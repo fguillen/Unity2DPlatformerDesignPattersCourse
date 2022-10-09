@@ -12,7 +12,7 @@ public class ScreenLimit : MonoBehaviour
         {
             Agent agent = collider.gameObject.GetComponent<Agent>();
 
-            agent.damageManager.GetHit(1);
+            agent.damageManager.GetHit(1, collider.bounds.center);
 
             agent.Die();
         }

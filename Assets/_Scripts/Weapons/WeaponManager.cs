@@ -54,7 +54,7 @@ namespace WeaponSystem
         {
             // Debug.Log($"OnDrawGizmos({!drawGizmo}, {currentWeapon == null}, {!Application.isPlaying}, {agent == null})");
 
-            if(!drawGizmo || currentWeapon == null || !Application.isPlaying || agent == null)
+            if(!drawGizmo || currentWeapon == null || agent == null)
                 return;
 
             Gizmos.color = Color.red;

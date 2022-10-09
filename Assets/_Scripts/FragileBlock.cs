@@ -14,10 +14,8 @@ public class FragileBlock : MonoBehaviour, IHittable
         animator = GetComponent<Animator>();
     }
 
-    public void GetHit(int damage)
+    public void GetHit(int damage, Vector2 point)
     {
-        Debug.Log("FragileBlock.GetHit()");
-
         animator.Play("Broken", -1, 0f);
         OnHit?.Invoke();
     }

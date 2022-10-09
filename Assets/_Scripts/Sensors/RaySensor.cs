@@ -12,25 +12,18 @@ namespace Sensors
         [SerializeField] Color gizmosColorNoObstacle = Color.blue;
         [SerializeField] LayerMask objectiveLayerMask;
         [SerializeField] Transform limit;
-        [SerializeField] float checkIntervalSeconds = 0.1f;
-
-        float lastTimeChecked;
 
         public RaycastHit2D hit { get; private set; }
-        public bool hasHit { get; private set; }
+        bool hasHit;
 
-        void Update()
+        public bool HasHit()
         {
-            if(lastTimeChecked + checkIntervalSeconds < Time.time)
-                CheckHit();
+            CheckHit();
+            return hasHit;
         }
 
         void CheckHit()
         {
-            // Debug.Log($"CheckObstacle: {Direction()}, {Distance()}");
-
-            lastTimeChecked = Time.time;
-
             hit =
                 Physics2D.Raycast(
                     transform.position,
@@ -40,9 +33,19 @@ namespace Sensors
                 );
 
             if(hit.collider != null)
+            {
+                if(!hasHit)
+                    Debug.Log($"{GetType().Name}.RaySensor Hitted - {hit.point}, {hit.transform.position}, {hit.collider.tag}, {transform.position}, {Direction()}, {Distance()}");
+
                 hasHit = true;
+            }
             else
+            {
+                if(hasHit)
+                    Debug.Log($"{GetType().Name}.RaySensor UnHitted");
+
                 hasHit = false;
+            }
         }
 
         void OnDrawGizmos()

@@ -6,6 +6,6 @@ namespace WeaponSystem
 {
     public interface IHittable
     {
-        void GetHit(int damage);
+        void GetHit(int damage, Vector2 point);
     }
 }

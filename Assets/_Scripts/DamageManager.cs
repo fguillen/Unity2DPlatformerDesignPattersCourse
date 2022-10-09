@@ -9,7 +9,7 @@ public class DamageManager : MonoBehaviour, IHittable
     int maxHealth;
     int currentHealth;
 
-    public UnityEvent OnHit;
+    public UnityEvent<Vector2> OnHit;
     public UnityEvent OnDie;
     public UnityEvent<int> OnMaxHealthSet;
     public UnityEvent<int> OnHealthChange;
@@ -21,9 +21,9 @@ public class DamageManager : MonoBehaviour, IHittable
         OnMaxHealthSet?.Invoke(maxHealth);
     }
 
-    public void GetHit(int damage)
+    public void GetHit(int damage, Vector2 point)
     {
-        Debug.Log($"GetHit({damage})");
+        Debug.Log($"GetHit({damage}, {point})");
 
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
@@ -33,6 +33,6 @@ public class DamageManager : MonoBehaviour, IHittable
         if(currentHealth == 0)
             OnDie?.Invoke();
         else
-            OnHit?.Invoke();
+            OnHit?.Invoke(point);
     }
 }

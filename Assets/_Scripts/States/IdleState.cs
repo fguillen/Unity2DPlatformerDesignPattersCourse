@@ -43,10 +43,8 @@ public class IdleState : State
             agent.stateManager.TransitionToState(StateType.Jump);
     }
 
-    protected override void HandleHitted()
+    protected override void HandleHitted(Vector2 point)
     {
-        Debug.Log("IdleState.HandleHitted()");
-
         agent.stateManager.TransitionToState(StateType.Hit);
     }
 }

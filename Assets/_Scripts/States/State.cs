@@ -57,7 +57,7 @@ public abstract class State : MonoBehaviour
     protected virtual void HandleJumpReleased() {}
     protected virtual void HandleWeaponChange() {}
 
-    protected virtual void HandleHitted() {}
+    protected virtual void HandleHitted(Vector2 point) {}
     protected virtual void HandleDie() {}
 
     protected virtual void HandleAnimationAction() {}

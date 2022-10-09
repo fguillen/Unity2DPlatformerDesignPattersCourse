@@ -33,7 +33,7 @@ namespace WeaponSystem
                 foreach (var hittable in hit.collider.GetComponents<IHittable>())
                 {
                     Debug.Log($"Sending Hit");
-                    hittable.GetHit(damage);
+                    hittable.GetHit(damage, hit.point);
                 }
             }
         }

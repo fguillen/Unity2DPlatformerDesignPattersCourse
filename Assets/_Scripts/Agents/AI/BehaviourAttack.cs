@@ -12,7 +12,7 @@ namespace AI
             if(lastAttackAt + delayBetweenAttacks > Time.time)
                 return;
 
-            if(agent.playerInFrontSensor.hasHit)
+            if(agent.playerInFrontSensor.HasHit())
             {
                 agent.agentInput.CallAttack();
                 lastAttackAt = Time.time;

@@ -14,8 +14,8 @@ namespace AI
                 InitCurrentMovement();
 
             if(
-                agent.wallInFrontSensor.hasHit ||
-                !agent.endOfGroundSensor.hasHit
+                agent.wallInFrontSensor.HasHit() ||
+                !agent.endOfGroundSensor.HasHit()
             )
                 Turn();
 
