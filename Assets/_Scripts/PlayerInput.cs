@@ -4,14 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInput : MonoBehaviour, IAgentInput
+public class PlayerInput : AgentInput
 {
-    [field: SerializeField] public Vector2 MovementVector { get; private set; }
-    public event Action OnAttack;
-    public event Action OnJumpPressed;
-    public event Action OnJumpReleased;
-    public event Action OnWeaponChange;
-    public event Action<Vector2> OnMovement;
     public KeyCode jumpKey, attackKey, menuKey;
     public UnityEvent OnMenuKeyPressed;
 
@@ -31,22 +25,22 @@ public class PlayerInput : MonoBehaviour, IAgentInput
     void GetWeaponChangeInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            OnWeaponChange?.Invoke();
+            CallWeaponChange();
     }
 
     void GetJumpInput()
     {
         if (Input.GetKeyDown(jumpKey))
-            OnJumpPressed?.Invoke();
+            CallJumpPressed();
 
         if (Input.GetKeyUp(jumpKey))
-            OnJumpReleased?.Invoke();
+            CallJumpReleased();
     }
 
     void GetAttackInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            OnAttack?.Invoke();
+            CallAttack();
     }
 
     void GetMenuInput()
@@ -58,7 +52,7 @@ public class PlayerInput : MonoBehaviour, IAgentInput
     void GetMovementInput()
     {
         MovementVector = GetMovementVector();
-        OnMovement?.Invoke(MovementVector);
+        CallMovement(MovementVector);
     }
 
     protected Vector2 GetMovementVector()

@@ -13267,6 +13267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213270911, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 1187716048790755958, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -13315,9 +13319,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lizard
       objectReference: {fileID: 0}
-    - target: {fileID: 1187716048790755961, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 2673073381454221706, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 133184
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742064659984082533, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 133184
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4866d59720e4d918584d61d8284dec, type: 3}
@@ -13583,9 +13591,7 @@ PrefabInstance:
       propertyPath: OnMaxHealthSet.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1863015781}
-    m_RemovedComponents:
-    - {fileID: 2203513036816090426, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-    - {fileID: 5500562756675877749, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
 --- !u!1001 &6327864405793802373
 PrefabInstance:

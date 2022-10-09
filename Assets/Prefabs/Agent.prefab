@@ -159,7 +159,7 @@ MonoBehaviour:
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
+  objectiveLayerMask:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 865004398534162470}
@@ -290,8 +290,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9207197745982923840}
   - component: {fileID: 3579791776508281215}
-  - component: {fileID: 687839270024893662}
-  - component: {fileID: 2977537206805740584}
   m_Layer: 15
   m_Name: Sensor1
   m_TagString: Untagged
@@ -329,47 +327,7 @@ MonoBehaviour:
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 133184
-  limit: {fileID: 8143448878231341205}
-  checkIntervalSeconds: 0.1
---- !u!114 &687839270024893662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184462050078981100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 0
-  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
-  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 133184
-  limit: {fileID: 8143448878231341205}
-  checkIntervalSeconds: 0.1
---- !u!114 &2977537206805740584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184462050078981100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 0
-  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
-  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
+  objectiveLayerMask:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 8143448878231341205}
@@ -546,8 +504,6 @@ GameObject:
   m_Component:
   - component: {fileID: 536185400294467224}
   - component: {fileID: 8715390305287878425}
-  - component: {fileID: 803302443764864786}
-  - component: {fileID: 7427757232947910280}
   m_Layer: 15
   m_Name: Sensor2
   m_TagString: Untagged
@@ -585,47 +541,7 @@ MonoBehaviour:
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 133184
-  limit: {fileID: 7297176721355216476}
-  checkIntervalSeconds: 0.1
---- !u!114 &803302443764864786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5616716677375464139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 0
-  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
-  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 133184
-  limit: {fileID: 7297176721355216476}
-  checkIntervalSeconds: 0.1
---- !u!114 &7427757232947910280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5616716677375464139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df09cafc128f042cbb32b68ed4ba5161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 0
-  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
-  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
+  objectiveLayerMask:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 7297176721355216476}
@@ -1485,6 +1401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
+  agentInput: {fileID: 0}
   agentAnimation: {fileID: 0}
   groundSensor: {fileID: 0}
   climbSensor: {fileID: 0}
@@ -1569,9 +1486,9 @@ MonoBehaviour:
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
+  objectiveLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 133184
   limit: {fileID: 4694454333878638032}
   checkIntervalSeconds: 0.1
 --- !u!1 &8383642057355164131

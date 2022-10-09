@@ -10,7 +10,7 @@ namespace Sensors
         [SerializeField] bool drawGizmos;
         [SerializeField] Color gizmosColorObstacle = Color.red;
         [SerializeField] Color gizmosColorNoObstacle = Color.blue;
-        [SerializeField] LayerMask groundLayerMask;
+        [SerializeField] LayerMask objectiveLayerMask;
         [SerializeField] Transform limit;
         [SerializeField] float checkIntervalSeconds = 0.1f;
 
@@ -36,7 +36,7 @@ namespace Sensors
                     transform.position,
                     Direction(),
                     Distance(),
-                    groundLayerMask
+                    objectiveLayerMask
                 );
 
             if(hit.collider != null)

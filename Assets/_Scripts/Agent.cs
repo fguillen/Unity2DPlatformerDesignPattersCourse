@@ -8,7 +8,7 @@ using Sensors;
 public class Agent : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb2d;
-    [HideInInspector] public IAgentInput agentInput;
+    [HideInInspector] public AgentInput agentInput;
     [HideInInspector] public AgentAnimation agentAnimation;
     [HideInInspector] public GroundSensor groundSensor;
     [HideInInspector] public ClimbSensor climbSensor;
@@ -27,7 +27,7 @@ public class Agent : MonoBehaviour
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        agentInput = GetComponentInParent<IAgentInput>();
+        agentInput = GetComponentInParent<AgentInput>();
         agentAnimation = GetComponentInChildren<AgentAnimation>();
         spriteFlipper = GetComponentInChildren<SpriteFlipper>();
         groundSensor = GetComponentInChildren<GroundSensor>();

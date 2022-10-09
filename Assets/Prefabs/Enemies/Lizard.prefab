@@ -44,15 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05853ec5bd5304846a7eacde75b3c437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFound: 0
   drawGizmos: 0
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  groundLayerMask:
+  objectiveLayerMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 0
   limit: {fileID: 1558305378}
-  playerInFront: 0
+  checkIntervalSeconds: 0.1
 --- !u!1 &440764980
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440764981}
-  - component: {fileID: 440764982}
+  - component: {fileID: 3698932357049160297}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -84,7 +83,7 @@ Transform:
   m_Father: {fileID: 996967163}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440764982
+--- !u!114 &3698932357049160297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 440764980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c7a4d1e1d245b18704422331c5b60, type: 3}
+  m_Script: {fileID: 11500000, guid: afa56ee9e23ea40f8b0b65dc4d7a8cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delayBetweenAttacks: 1
@@ -138,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1349908617}
-  - component: {fileID: 1349908616}
+  - component: {fileID: 7617609188239548771}
   m_Layer: 0
   m_Name: Patrol
   m_TagString: Untagged
@@ -160,7 +159,7 @@ Transform:
   m_Father: {fileID: 996967163}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1349908616
+--- !u!114 &7617609188239548771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1349908615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0297a39828ea45e8b183f1ae5771353, type: 3}
+  m_Script: {fileID: 11500000, guid: e074ff65c3bb14fb5a42da3c6f069a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1558305377
@@ -212,7 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1187716048790755958}
   - component: {fileID: 1187716048790755956}
-  - component: {fileID: 1171498968}
+  - component: {fileID: 4052605306390738612}
+  - component: {fileID: 737744996}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: 290e1dc87f42a4c35aa5d30153c76a0a, type: 2}
---- !u!114 &1171498968
+--- !u!114 &4052605306390738612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,12 +259,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1187716048790755961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99669399c0bf43e68308946804ab824, type: 3}
+  m_Script: {fileID: 11500000, guid: a6c48eef37a2342a092521d4820b2769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  attackBehaviour: {fileID: 440764982}
-  patrolBehaviour: {fileID: 1349908616}
+  attackBehaviour: {fileID: 3698932357049160297}
+  patrolBehaviour: {fileID: 7617609188239548771}
+--- !u!114 &737744996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187716048790755961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3731f6ba4db45aa937d2a29d9e1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1187716048949940518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,10 +295,6 @@ PrefabInstance:
     - target: {fileID: 564869360906991563, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: obstacleFound
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3846979425842266284, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-      propertyPath: obstacleFound
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6236291919777241031, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: obstacleFound
