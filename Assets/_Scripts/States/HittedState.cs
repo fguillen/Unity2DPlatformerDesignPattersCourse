@@ -15,7 +15,6 @@ public class HittedState : State
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.hit);
-        agent.rb2d.velocity = new Vector2(0f, agent.rb2d.velocity.y);
         OnHit?.Invoke();
     }
 

@@ -175,7 +175,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 865004398534162470}
-  checkIntervalSeconds: 0.1
 --- !u!1 &1573188191926254252
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +373,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 8143448878231341205}
-  checkIntervalSeconds: 0.1
 --- !u!1 &4207282917496946405
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +634,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 7297176721355216476}
-  checkIntervalSeconds: 0.1
 --- !u!1 &5749953614607530178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,7 +1621,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 133184
   limit: {fileID: 4694454333878638032}
-  checkIntervalSeconds: 0.1
 --- !u!1 &8063797551481350614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7789505558502251823}
-  force: 100
+  force: 10
 --- !u!1 &8383642057355164131
 GameObject:
   m_ObjectHideFlags: 0

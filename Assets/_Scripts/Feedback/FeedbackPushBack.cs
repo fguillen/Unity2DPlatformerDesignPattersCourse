@@ -5,12 +5,12 @@ using UnityEngine;
 public class FeedbackPushBack : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
-    [SerializeField] float force;
+    [SerializeField] float force = 10f;
 
     public void Perform(Vector2 point)
     {
         Vector2 direction = ((Vector2)transform.position - point).normalized;
-        Debug.Log($"FeedbackPushBack.Perform({point}, {direction}, {force})");
+        Debug.Log($"FeedbackPushBack.Perform({transform.position}, {point}, {direction}, {force})");
         rb2d.AddForce(direction * force, ForceMode2D.Impulse);
     }
 }
