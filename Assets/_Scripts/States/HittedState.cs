@@ -20,8 +20,6 @@ public class HittedState : State
 
     protected override void HandleAnimationEnd()
     {
-        Debug.Log("HittedState.HandleAnimationEnd()");
-
         agent.stateManager.TransitionToState(StateType.Idle);
     }
 }

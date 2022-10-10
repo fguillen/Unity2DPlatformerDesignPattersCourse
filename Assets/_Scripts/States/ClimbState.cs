@@ -13,8 +13,6 @@ public class ClimbState : State
 
     protected override void EnterState()
     {
-        Debug.Log("ClimbState.EnterState()");
-
         agent.agentAnimation.PlayAnimation(AnimationType.climb);
 
         agent.movementData.currentSpeed = 0f;

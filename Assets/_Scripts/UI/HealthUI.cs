@@ -28,8 +28,6 @@ public class HealthUI : MonoBehaviour
 
     public void SetHealth(int health)
     {
-        Debug.Log($"HealthUI.SetHealth({health})");
-
         for (int i = 0; i < healthImages.Count; i++)
         {
             if(i < health)

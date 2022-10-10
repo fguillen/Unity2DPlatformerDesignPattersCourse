@@ -44,14 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05853ec5bd5304846a7eacde75b3c437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawGizmos: 0
+  drawGizmos: 1
   gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
   gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
   objectiveLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   limit: {fileID: 1558305378}
-  checkIntervalSeconds: 0.1
 --- !u!1 &440764980
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,15 +34,15 @@ namespace Sensors
 
             if(hit.collider != null)
             {
-                if(!hasHit)
-                    Debug.Log($"{GetType().Name}.RaySensor Hitted - {hit.point}, {hit.transform.position}, {hit.collider.tag}, {transform.position}, {Direction()}, {Distance()}");
+                // if(!hasHit)
+                //     Debug.Log($"{GetType().Name}.RaySensor Hitted - {hit.point}, {hit.transform.position}, {hit.collider.tag}, {transform.position}, {Direction()}, {Distance()}");
 
                 hasHit = true;
             }
             else
             {
-                if(hasHit)
-                    Debug.Log($"{GetType().Name}.RaySensor UnHitted");
+                // if(hasHit)
+                //     Debug.Log($"{GetType().Name}.RaySensor UnHitted");
 
                 hasHit = false;
             }

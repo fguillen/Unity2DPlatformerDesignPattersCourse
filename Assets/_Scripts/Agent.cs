@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PlayerSpawn;
 using WeaponSystem;
 using Sensors;
 
@@ -18,6 +17,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public WeaponManager weaponManager;
     [HideInInspector] public StateManager stateManager;
     [HideInInspector] public DamageManager damageManager;
+    [HideInInspector] public RespawnManager respawnManager;
 
     SpriteFlipper spriteFlipper;
 
@@ -43,7 +43,11 @@ public class Agent : MonoBehaviour
         stateManager.Initialize(this);
 
         damageManager = GetComponentInChildren<DamageManager>();
-        damageManager.Initialize(agentData.maxHealth);
+        damageManager.Initialize(this, agentData.maxHealth);
+
+        respawnManager = GetComponentInChildren<RespawnManager>();
+        if(respawnManager != null)
+            respawnManager.Initialize(this);
     }
 
     // Start is called before the first frame update
@@ -61,11 +65,29 @@ public class Agent : MonoBehaviour
 
     public void Die()
     {
-        PlayerSpawnManager.instance.SpawnPlayer();
+        Debug.Log("Die()");
+        stateManager.TransitionToState(StateType.Die);
+    }
+
+    public void DestroyOrRespawn()
+    {
+        if(respawnManager == null)
+            DestroyObject();
+        else
+        {
+            Initialize();
+            respawnManager.Respawn();
+        }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(transform.parent.gameObject);
     }
 
     public void Initialize()
     {
         stateManager.TransitionToState(StateType.Idle);
+        damageManager.Initialize(this, agentData.maxHealth);
     }
 }

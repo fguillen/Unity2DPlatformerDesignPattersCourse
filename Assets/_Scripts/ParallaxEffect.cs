@@ -13,8 +13,6 @@ public class ParallaxEffect : MonoBehaviour
         originalPosition = transform.position;
         offset = Camera.main.transform.position - transform.position;
         movementSpeed = Mathf.Lerp(0f, 1f, transform.position.z / 20f);
-
-        Debug.Log($"movementSpeed: {movementSpeed}");
     }
 
     void FixedUpdate()

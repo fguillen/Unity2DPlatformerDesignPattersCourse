@@ -33,7 +33,6 @@ namespace Sensors
 
         void SetCanClimb(bool value)
         {
-            Debug.Log($"CanClimb: {value}");
             _canClimb = value;
         }
     }

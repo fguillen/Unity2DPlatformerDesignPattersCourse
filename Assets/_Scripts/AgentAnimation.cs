@@ -13,7 +13,6 @@ public class AgentAnimation : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        Debug.Log($"AgentAnimation.animator: {animator}");
     }
 
     public void PlayAnimation(AnimationType animationType)
@@ -48,6 +47,10 @@ public class AgentAnimation : MonoBehaviour
 
             case AnimationType.hit:
                 Play("Hit");
+                break;
+
+            case AnimationType.die:
+                Play("Die");
                 break;
 
             default:

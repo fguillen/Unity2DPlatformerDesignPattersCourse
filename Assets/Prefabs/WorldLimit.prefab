@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6327864407553870371}
   - component: {fileID: 2033943208}
   m_Layer: 16
-  m_Name: ScreenLimit
+  m_Name: WorldLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -225176619
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.735849, g: 0.4199893, b: 0.4199893, a: 1}

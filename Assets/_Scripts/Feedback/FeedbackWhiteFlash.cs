@@ -27,11 +27,8 @@ public class FeedbackWhiteFlash : MonoBehaviour, IFeedback
 
     void ToggleActive(bool val)
     {
-        Debug.Log($"ToggleActive({val})");
-
         if(val)
         {
-            Debug.Log($"Material activate");
             spriteRenderer.material = solidColorMaterial;
             solidColorMaterial.SetFloat("Active", 1f);
         } else

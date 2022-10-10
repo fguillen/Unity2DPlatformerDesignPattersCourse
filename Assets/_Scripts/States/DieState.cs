@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class DieState : State
 {
     public UnityEvent OnDie;
+    [SerializeField] float waitUntilDestroySeconds = 2f;
+    [SerializeField] Collider2D hitCollider;
 
     public override StateType Type()
     {
@@ -16,12 +18,18 @@ public class DieState : State
     {
         agent.agentAnimation.PlayAnimation(AnimationType.die);
         agent.rb2d.velocity = new Vector2(0f, agent.rb2d.velocity.y);
-
         OnDie?.Invoke();
+        hitCollider.enabled = false;
     }
 
     protected override void HandleAnimationEnd()
     {
-        agent.Die();
+        Invoke("CallDestroy", waitUntilDestroySeconds);
+    }
+
+    void CallDestroy()
+    {
+        hitCollider.enabled = true;
+        agent.DestroyOrRespawn();
     }
 }

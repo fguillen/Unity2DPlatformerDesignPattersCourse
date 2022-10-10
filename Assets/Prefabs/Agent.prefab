@@ -94,6 +94,8 @@ MonoBehaviour:
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
+  agent: {fileID: 0}
+  isDead: 0
 --- !u!1 &350660703503989736
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +173,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7789505558182173894}
   durationSeconds: 2
   blinkDurationSeconds: 0.1
+  blinkAlpha: 0.5
 --- !u!1 &1180416559682132167
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +645,91 @@ Transform:
   m_Father: {fileID: 7789505557806133446}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5493606102941251986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4132260719268718337}
+  - component: {fileID: 6146130999447171316}
+  - component: {fileID: 6602086451175664762}
+  m_Layer: 15
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4132260719268718337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493606102941251986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7789505558502251808}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6146130999447171316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493606102941251986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2eeb026851cc40db9a4b8c141d176ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnRespawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4203411712102540643}
+        m_TargetAssemblyTypeName: FeedbackImmunity, Assembly-CSharp
+        m_MethodName: Perform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &6602086451175664762
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493606102941251986}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5616716677375464139
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +915,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  waitUntilDestroySeconds: 2
+  hitCollider: {fileID: 1192483405}
 --- !u!1 &7017176625425860580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1215,7 @@ GameObject:
   - component: {fileID: 7789505557712592147}
   - component: {fileID: 7789505557712592148}
   m_Layer: 15
-  m_Name: Collider
+  m_Name: GroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,8 +1620,8 @@ GameObject:
   - component: {fileID: 7789505558502251808}
   - component: {fileID: 7789505558502251823}
   - component: {fileID: 7789505558502251809}
-  - component: {fileID: 7789505558502251810}
-  m_Layer: 15
+  - component: {fileID: 3686008052872951327}
+  m_Layer: 18
   m_Name: Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,6 +1645,7 @@ Transform:
   - {fileID: 7789505557220135311}
   - {fileID: 7789505557806133446}
   - {fileID: 1192483403}
+  - {fileID: 4132260719268718337}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1602,9 +1693,10 @@ MonoBehaviour:
   weaponManager: {fileID: 0}
   stateManager: {fileID: 0}
   damageManager: {fileID: 0}
+  respawnManager: {fileID: 0}
   movementData: {fileID: 7789505557220135296}
   agentData: {fileID: 0}
---- !u!61 &7789505558502251810
+--- !u!61 &3686008052872951327
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1617,7 +1709,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.33642614, y: -0.1544669}
+  m_Offset: {x: -0.36557388, y: -0.163266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1628,7 +1720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9446332, y: 1.2960687}
+  m_Size: {x: 1.7311478, y: 1.1845616}
   m_EdgeRadius: 0
 --- !u!1 &8019633527222749455
 GameObject:
@@ -1978,6 +2070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
+--- !u!4 &7344642420879203963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5697609595463482187, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
+  m_PrefabInstance: {fileID: 3097509948971558192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3920116512969186346 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2061414778867022106, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
@@ -1989,11 +2086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99a498a103284e5ca2c3994b4cf0152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7344642420879203963 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5697609595463482187, guid: a2e87b22c2b9842bdb49f0adfac2d2f2, type: 3}
-  m_PrefabInstance: {fileID: 3097509948971558192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6789740216586690615
 PrefabInstance:
   m_ObjectHideFlags: 0

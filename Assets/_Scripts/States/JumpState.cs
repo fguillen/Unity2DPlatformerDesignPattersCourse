@@ -20,8 +20,6 @@ public class JumpState : RunState
         jumpPressed = true;
 
         OnJump?.Invoke();
-
-        Debug.Log($"EnterState {jumpPressed}");
     }
 
     public override void StateFixedUpdate()
@@ -38,15 +36,12 @@ public class JumpState : RunState
 
     void ApplyLowJumpModifier()
     {
-        Debug.Log($"ApplyLowJumpModifier {jumpPressed}");
-
         if(!jumpPressed)
             agent.rb2d.AddForce(Vector2.down * agent.agentData.lowJumpForce, ForceMode2D.Force);
     }
 
     protected override void HandleJumpReleased()
     {
-        Debug.Log($"HandleJumpReleased()");
         jumpPressed = false;
     }
 

@@ -14,24 +14,33 @@ public class DamageManager : MonoBehaviour, IHittable
     public UnityEvent<int> OnMaxHealthSet;
     public UnityEvent<int> OnHealthChange;
 
-    public void Initialize(int maxHealth)
+    public Agent agent;
+    public bool isDead = false;
+
+    public void Initialize(Agent agent, int maxHealth)
     {
+        this.agent = agent;
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
         OnMaxHealthSet?.Invoke(maxHealth);
+        isDead = false;
     }
 
     public void GetHit(int damage, Vector2 point)
     {
-        Debug.Log($"GetHit({damage}, {point})");
-
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
+
+        Debug.Log($"GetHit({damage}, {point}, {currentHealth})");
 
         OnHealthChange?.Invoke(currentHealth);
 
         if(currentHealth == 0)
+        {
+            agent.Die();
             OnDie?.Invoke();
+            isDead = true;
+        }
         else
             OnHit?.Invoke(point);
     }

@@ -156,6 +156,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3686008052872951327, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.921916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686008052872951327, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0922807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686008052872951327, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.031943798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686008052872951327, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.11712557
+      objectReference: {fileID: 0}
     - target: {fileID: 3920116512969186346, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: audioClip
       value: 
