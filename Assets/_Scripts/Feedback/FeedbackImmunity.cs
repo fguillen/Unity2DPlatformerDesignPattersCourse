@@ -8,6 +8,13 @@ public class FeedbackImmunity : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] float durationSeconds = 1f;
     [SerializeField] float blinkDurationSeconds = 0.2f;
+    [SerializeField][Range(0, 1)] float blinkAlpha = 0.5f;
+    float originalAlpha;
+
+    void Awake()
+    {
+        originalAlpha = spriteRenderer.color.a;
+    }
 
     public void Perform()
     {
@@ -37,11 +44,18 @@ public class FeedbackImmunity : MonoBehaviour
     IEnumerator BlinkingCoroutine()
     {
         yield return new WaitForSeconds(blinkDurationSeconds);
-        spriteRenderer.enabled = false;
+        SetAlpha(blinkAlpha);
         yield return new WaitForSeconds(blinkDurationSeconds);
-        spriteRenderer.enabled = true;
+        SetAlpha(1f);
 
         if(!theCollider.enabled)
             StartCoroutine(BlinkingCoroutine());
+    }
+
+    void SetAlpha(float alpha)
+    {
+        Color color = spriteRenderer.color;
+        color.a = alpha;
+        spriteRenderer.color = color;
     }
 }
