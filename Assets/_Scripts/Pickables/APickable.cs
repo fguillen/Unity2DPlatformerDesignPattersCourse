@@ -8,6 +8,15 @@ public abstract class APickable : MonoBehaviour
     public abstract void PickUp(Agent agent);
     public UnityEvent OnPicked;
 
+    Collider2D theCollider;
+    SpriteRenderer spriteRenderer;
+
+    void Awake()
+    {
+        theCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"APickable.OnTriggerEnter2D: {other.gameObject.name}");
@@ -16,7 +25,14 @@ public abstract class APickable : MonoBehaviour
         {
             PickUp(other.GetComponent<Agent>());
             OnPicked?.Invoke();
-            Destroy(gameObject);
+            DestroyObject();
         }
+    }
+
+    void DestroyObject()
+    {
+        theCollider.enabled = false;
+        spriteRenderer.enabled = false;
+        Destroy(gameObject, 1f);
     }
 }

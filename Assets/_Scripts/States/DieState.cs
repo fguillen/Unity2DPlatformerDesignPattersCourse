@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class DieState : State
 {
     public UnityEvent OnDie;
+    public UnityEvent OnDestroy;
     [SerializeField] float waitUntilDestroySeconds = 2f;
     [SerializeField] Collider2D hitCollider;
 
@@ -29,6 +30,7 @@ public class DieState : State
 
     void CallDestroy()
     {
+        OnDestroy?.Invoke();
         hitCollider.enabled = true;
         agent.DestroyOrRespawn();
     }
