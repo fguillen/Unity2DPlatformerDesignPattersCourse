@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3337471539578743711}
   - component: {fileID: 6973973487957849630}
   - component: {fileID: -7430819471982778602}
+  - component: {fileID: 4601224746967541219}
   m_Layer: 5
   m_Name: HealthImage
   m_TagString: Untagged
@@ -90,4 +91,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnImageChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4601224746967541219}
+        m_TargetAssemblyTypeName: UIScalePulsation, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4601224746967541219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022908032020050067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adca7e85752e348538b839182f170580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScale: 1.4
+  duration: 0.2
+  numLoops: 2
