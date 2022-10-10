@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4694454333878638032}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Limit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4456035117964149143}
   - component: {fileID: 3846979425842266284}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: EndOfGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 865004398534162470}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Limit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3426562962550933638}
   - component: {fileID: 2564209065908893507}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: WallInFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8842948996484065355}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Sensors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
