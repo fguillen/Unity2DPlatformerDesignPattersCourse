@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7789505558502251823}
-  force: 10
+  force: 5
 --- !u!1 &8364293211137849726
 GameObject:
   m_ObjectHideFlags: 0

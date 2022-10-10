@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1192483402, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1192483404, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.size
       value: 1

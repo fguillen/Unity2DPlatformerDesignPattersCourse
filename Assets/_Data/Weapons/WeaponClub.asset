@@ -18,5 +18,5 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   hittableMask:
     serializedVersion: 2
-    m_Bits: 147968
+    m_Bits: 131584
   range: 1

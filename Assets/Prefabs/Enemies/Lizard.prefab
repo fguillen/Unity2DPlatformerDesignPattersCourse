@@ -283,6 +283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1187716048790755958}
     m_Modifications:
+    - target: {fileID: 1192483402, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1192483405, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Size.x
       value: 1.5157795
