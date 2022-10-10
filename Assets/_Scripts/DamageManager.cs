@@ -44,4 +44,11 @@ public class DamageManager : MonoBehaviour, IHittable
         else
             OnHit?.Invoke(point);
     }
+
+    public void AddHealth(int value)
+    {
+        currentHealth += value;
+        currentHealth = Mathf.Min(maxHealth, currentHealth);
+        OnHealthChange?.Invoke(currentHealth);
+    }
 }
