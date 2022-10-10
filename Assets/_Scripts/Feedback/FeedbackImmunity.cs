@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FeedbackImmune : MonoBehaviour
+public class FeedbackImmunity : MonoBehaviour
 {
     [SerializeField] Collider2D theCollider;
     [SerializeField] SpriteRenderer spriteRenderer;
