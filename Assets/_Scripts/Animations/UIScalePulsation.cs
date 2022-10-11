@@ -6,12 +6,12 @@ public class UIScalePulsation : MonoBehaviour
     [SerializeField] float finalScale = 2f;
     [SerializeField] float duration = 0.2f;
     [SerializeField] int numLoops = -1;
+    [SerializeField] bool onAwake = false;
+    [SerializeField] RectTransform rectTransform;
 
     Vector3 originalScaleV;
     Vector3 finalScaleV;
     Sequence sequence;
-
-    [SerializeField] RectTransform rectTransform;
 
     void Awake()
     {
@@ -20,6 +20,12 @@ public class UIScalePulsation : MonoBehaviour
 
         originalScaleV = rectTransform.localScale;
         finalScaleV = Vector3.one * finalScale;
+    }
+
+    void Start()
+    {
+        if(onAwake)
+            Play();
     }
 
     public void Play()

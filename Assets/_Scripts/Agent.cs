@@ -18,6 +18,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public StateManager stateManager;
     [HideInInspector] public DamageManager damageManager;
     [HideInInspector] public RespawnManager respawnManager;
+    [HideInInspector] public PointsManager pointsManager;
 
     SpriteFlipper spriteFlipper;
 
@@ -44,6 +45,9 @@ public class Agent : MonoBehaviour
 
         damageManager = GetComponentInChildren<DamageManager>();
         damageManager.Initialize(this, agentData.maxHealth);
+
+        pointsManager = GetComponentInChildren<PointsManager>();
+        pointsManager.Initialize();
 
         respawnManager = GetComponentInChildren<RespawnManager>();
         if(respawnManager != null)
