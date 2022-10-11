@@ -11,11 +11,13 @@ public class UIScalePulsation : MonoBehaviour
     Vector3 finalScaleV;
     Sequence sequence;
 
-    RectTransform rectTransform;
+    [SerializeField] RectTransform rectTransform;
 
     void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
+        if(rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+
         originalScaleV = rectTransform.localScale;
         finalScaleV = Vector3.one * finalScale;
     }
