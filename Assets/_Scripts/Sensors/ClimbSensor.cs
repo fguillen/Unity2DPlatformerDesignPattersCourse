@@ -16,19 +16,14 @@ namespace Sensors
 
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if(InLayerMask(collision.gameObject.layer))
+            if(Utils.InLayerMask(collision.gameObject.layer, climbLayerMask))
                 canClimb = true;
         }
 
         void OnTriggerExit2D(Collider2D collision)
         {
-            if(InLayerMask(collision.gameObject.layer))
+            if(Utils.InLayerMask(collision.gameObject.layer, climbLayerMask))
                 canClimb = false;
-        }
-
-        bool InLayerMask(int layer)
-        {
-            return climbLayerMask == (climbLayerMask | (1 << layer));
         }
 
         void SetCanClimb(bool value)

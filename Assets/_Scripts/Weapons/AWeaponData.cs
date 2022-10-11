@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WeaponSystem
 {
-    public abstract class WeaponData : ScriptableObject, IEquatable<WeaponData>
+    public abstract class AWeaponData : ScriptableObject, IEquatable<AWeaponData>
     {
         public string weaponName;
         public int damage;
@@ -13,13 +13,14 @@ namespace WeaponSystem
         public AudioClip soundEffect;
         public LayerMask hittableMask;
 
-        public bool Equals(WeaponData other)
+        public bool Equals(AWeaponData other)
         {
             return weaponName == other.weaponName;
         }
 
         public abstract bool CanBeUsed(Agent agent);
         public abstract void Attack(Agent agent);
-        public abstract void DrawGizmo(Agent agent);
+
+        public virtual void DrawGizmo(Agent agent) {}
     }
 }

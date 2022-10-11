@@ -6,7 +6,7 @@ namespace WeaponSystem
 {
     public class GiveWeaponsToAgent : MonoBehaviour
     {
-        public List<WeaponData> weapons = new List<WeaponData>();
+        public List<AWeaponData> weapons = new List<AWeaponData>();
 
         void Start()
         {

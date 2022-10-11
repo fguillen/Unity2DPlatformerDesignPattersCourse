@@ -5,7 +5,7 @@ using UnityEngine;
 namespace WeaponSystem
 {
     [CreateAssetMenu(fileName = "NewMeleeWeaponData", menuName = "Weapons/Melee")]
-    public class WeaponDataMelee : WeaponData
+    public class WeaponDataMelee : AWeaponData
     {
         public float range = 2f;
 
@@ -28,7 +28,7 @@ namespace WeaponSystem
 
             if(hit.collider != null)
             {
-                Debug.Log($"Hit something ({hit.collider.gameObject.tag})");
+                Debug.Log($"Hit something ({hit.collider.gameObject.name})");
 
                 foreach (var hittable in hit.collider.GetComponents<IHittable>())
                 {

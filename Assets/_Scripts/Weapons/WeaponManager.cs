@@ -6,8 +6,8 @@ namespace WeaponSystem
 {
     public class WeaponManager : MonoBehaviour
     {
-        public List<WeaponData> weapons = new List<WeaponData>();
-        public WeaponData currentWeapon;
+        public List<AWeaponData> weapons = new List<AWeaponData>();
+        public AWeaponData currentWeapon;
         Agent agent;
         SpriteRenderer spriteRenderer;
 
@@ -33,18 +33,18 @@ namespace WeaponSystem
             currentWeapon.Attack(agent);
         }
 
-        public void AddWeapon(WeaponData weaponData)
+        public void AddWeapon(AWeaponData weaponData)
         {
             weapons.Add(weaponData);
         }
 
-        public void PickUpWeapon(WeaponData weaponData)
+        public void PickUpWeapon(AWeaponData weaponData)
         {
             AddWeapon(weaponData);
             SetCurrentWeapon(weaponData);
         }
 
-        void SetCurrentWeapon(WeaponData weaponData)
+        void SetCurrentWeapon(AWeaponData weaponData)
         {
             currentWeapon = weaponData;
             spriteRenderer.sprite = currentWeapon.sprite;

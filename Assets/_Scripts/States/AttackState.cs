@@ -15,7 +15,9 @@ public class AttackState : State
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.attack);
-        agent.rb2d.velocity = Vector2.zero;
+
+        if(agent.groundSensor.isGrounded)
+            agent.rb2d.velocity = Vector2.zero;
     }
 
     protected override void HandleAnimationAction()
