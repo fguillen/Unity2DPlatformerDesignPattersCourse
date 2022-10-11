@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 4132260719268718337}
   - component: {fileID: 6146130999447171316}
   - component: {fileID: 6602086451175664762}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: Respawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,6 +915,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
   waitUntilDestroySeconds: 2
   hitCollider: {fileID: 1192483405}
 --- !u!1 &7017176625425860580
