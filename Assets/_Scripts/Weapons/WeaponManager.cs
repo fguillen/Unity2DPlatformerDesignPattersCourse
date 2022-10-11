@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace WeaponSystem
 {
@@ -9,6 +10,7 @@ namespace WeaponSystem
     {
         public List<AWeaponData> weapons = new List<AWeaponData>();
         public AWeaponData currentWeapon;
+        public UnityEvent<AWeaponData> OnWeaponChange;
 
         [SerializeField] bool drawGizmo;
 
@@ -63,6 +65,7 @@ namespace WeaponSystem
         {
             currentWeapon = weaponData;
             spriteRenderer.sprite = currentWeapon.sprite;
+            OnWeaponChange?.Invoke(weaponData);
         }
 
         void OnDrawGizmos()
