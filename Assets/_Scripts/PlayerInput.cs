@@ -24,7 +24,7 @@ public class PlayerInput : AgentInput
 
     void GetWeaponChangeInput()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.W))
             CallWeaponChange();
     }
 

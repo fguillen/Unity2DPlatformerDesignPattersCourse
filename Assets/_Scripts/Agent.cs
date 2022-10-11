@@ -55,6 +55,7 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += spriteFlipper.FaceDirection;
+        agentInput.OnWeaponChange += weaponManager.HandleWeaponChange;
         Initialize();
     }
 
@@ -82,6 +83,10 @@ public class Agent : MonoBehaviour
 
     public void DestroyObject()
     {
+        agentInput.OnMovement -= HandleMovement;
+        agentInput.OnMovement -= spriteFlipper.FaceDirection;
+        agentInput.OnWeaponChange -= weaponManager.HandleWeaponChange;
+
         Destroy(transform.parent.gameObject);
     }
 

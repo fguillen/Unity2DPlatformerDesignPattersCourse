@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -19,9 +20,12 @@ namespace WeaponSystem
             spriteRenderer.enabled = val;
         }
 
-        void Awake()
+        public void HandleWeaponChange()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            AWeaponData weapon = NextWeapon();
+
+            if(weapon != null)
+                SetCurrentWeapon(weapon);
         }
 
         public void Initialize(Agent agent)
@@ -50,6 +54,11 @@ namespace WeaponSystem
             SetCurrentWeapon(weaponData);
         }
 
+        void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         void SetCurrentWeapon(AWeaponData weaponData)
         {
             currentWeapon = weaponData;
@@ -65,6 +74,20 @@ namespace WeaponSystem
 
             Gizmos.color = Color.red;
             currentWeapon.DrawGizmo(agent);
+        }
+
+        AWeaponData NextWeapon()
+        {
+            if(weapons.Count() == 1 || currentWeapon == null)
+                return null;
+
+            int index = weapons.IndexOf(currentWeapon);
+            int nextIndex = index + 1;
+
+            if(nextIndex >= weapons.Count())
+                nextIndex = 0;
+
+            return weapons[nextIndex];
         }
     }
 }
