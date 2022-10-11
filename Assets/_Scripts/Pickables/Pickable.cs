@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class APickable : MonoBehaviour
+public class Pickable : MonoBehaviour
 {
-    public abstract void PickUp(Agent agent);
-    public UnityEvent OnPicked;
+    public UnityEvent<Agent> OnPicked;
 
     Collider2D theCollider;
     SpriteRenderer spriteRenderer;
@@ -14,7 +13,7 @@ public abstract class APickable : MonoBehaviour
     void Awake()
     {
         theCollider = GetComponent<Collider2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,11 +21,13 @@ public abstract class APickable : MonoBehaviour
         Debug.Log($"APickable.OnTriggerEnter2D: {other.gameObject.name}");
 
         if(other.CompareTag("Player"))
-        {
             PickUp(other.GetComponent<Agent>());
-            OnPicked?.Invoke();
-            DestroyObject();
-        }
+    }
+
+    void PickUp(Agent agent)
+    {
+        OnPicked?.Invoke(agent);
+        DestroyObject();
     }
 
     void DestroyObject()

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPickable : APickable
+public class HealthPicked : MonoBehaviour
 {
     [SerializeField] int healthBoost = 1;
 
-    public override void PickUp(Agent agent)
+    public void PickUp(Agent agent)
     {
         agent.damageManager.AddHealth(healthBoost);
     }
