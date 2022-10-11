@@ -30,7 +30,11 @@ namespace WeaponSystem
 
             rb2d.velocity = direction * data.speed;
 
-            transform.DOLocalRotate(new Vector3(0, 0, 360 * -agent.movementData.horizontalMovementDirection), 0.5f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
+            transform.DOLocalRotate(
+                new Vector3(0, 0, 360 * -agent.movementData.horizontalMovementDirection),
+                0.5f,
+                RotateMode.FastBeyond360
+            ).SetRelative(true).SetEase(Ease.Linear);
         }
 
         void OnTriggerEnter2D(Collider2D collider)

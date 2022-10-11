@@ -8,10 +8,16 @@ namespace WeaponSystem
     {
         public List<AWeaponData> weapons = new List<AWeaponData>();
         public AWeaponData currentWeapon;
+
+        [SerializeField] bool drawGizmo;
+
         Agent agent;
         SpriteRenderer spriteRenderer;
 
-        [SerializeField] bool drawGizmo;
+        public void ToggleWeaponVisibility(bool val)
+        {
+            spriteRenderer.enabled = val;
+        }
 
         void Awake()
         {

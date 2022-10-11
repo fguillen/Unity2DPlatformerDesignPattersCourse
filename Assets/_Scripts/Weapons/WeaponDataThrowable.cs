@@ -20,6 +20,8 @@ namespace WeaponSystem
         {
             GameObject weaponObject = Instantiate(weaponPrefab, agent.weaponManager.transform.position, Quaternion.identity);
             weaponObject.GetComponent<ThrowableWeapon>().Initialize(agent, this);
+
+            agent.weaponManager.ToggleWeaponVisibility(false);
         }
     }
 }

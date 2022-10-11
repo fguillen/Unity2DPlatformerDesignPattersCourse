@@ -15,6 +15,7 @@ public class AttackState : State
     protected override void EnterState()
     {
         agent.agentAnimation.PlayAnimation(AnimationType.attack);
+        agent.weaponManager.ToggleWeaponVisibility(true);
 
         if(agent.groundSensor.isGrounded)
             agent.rb2d.velocity = Vector2.zero;
@@ -28,6 +29,7 @@ public class AttackState : State
 
     protected override void HandleAnimationEnd()
     {
+        agent.weaponManager.ToggleWeaponVisibility(false);
         agent.stateManager.TransitionToState(StateType.Idle);
     }
 
