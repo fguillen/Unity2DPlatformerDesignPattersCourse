@@ -13274,6 +13274,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1955788622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1955788622, guid: 96e4e3be6737349a4a7fdde155b519ee, type: 3}
+  m_PrefabInstance: {fileID: 5639983752720093405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977220301
 GameObject:
   m_ObjectHideFlags: 0
@@ -13868,31 +13873,91 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955788622}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3191731860268979387}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955788622}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: WeaponUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893650, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4839370100047572306, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
@@ -13916,6 +13981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 773889261}
     m_Modifications:
+    - target: {fileID: 1955788622, guid: 96e4e3be6737349a4a7fdde155b519ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7065708423856915556, guid: 96e4e3be6737349a4a7fdde155b519ee, type: 3}
       propertyPath: m_Pivot.x
       value: 1

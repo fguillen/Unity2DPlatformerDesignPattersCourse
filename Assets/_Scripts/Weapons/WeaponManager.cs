@@ -11,6 +11,8 @@ namespace WeaponSystem
         public List<AWeaponData> weapons = new List<AWeaponData>();
         public AWeaponData currentWeapon;
         public UnityEvent<AWeaponData> OnWeaponChange;
+        public UnityEvent OnMultipleWeapons;
+        public UnityEvent OnSingleWeapon;
 
         [SerializeField] bool drawGizmo;
 
@@ -33,6 +35,9 @@ namespace WeaponSystem
         public void Initialize(Agent agent)
         {
             this.agent = agent;
+
+            if(weapons.Count() <= 1)
+                OnSingleWeapon?.Invoke();
         }
 
         public bool CanAttack()
@@ -47,7 +52,12 @@ namespace WeaponSystem
 
         public void AddWeapon(AWeaponData weaponData)
         {
+            int beforeCount = weapons.Count();
+
             weapons.Add(weaponData);
+
+            if(beforeCount <= 1 && weapons.Count() == 2)
+                OnMultipleWeapons?.Invoke();
         }
 
         public void PickUpWeapon(AWeaponData weaponData)
