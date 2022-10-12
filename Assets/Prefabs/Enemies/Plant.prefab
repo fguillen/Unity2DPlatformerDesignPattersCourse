@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: OnDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6842101796415867306, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7789505557465438930, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -359,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3055815279098531916, guid: 6bec92c3a4820b341968849bc203352c, type: 3}
+    - target: {fileID: 7789505558182173895, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8e666a8d02f8c4d3da017c7b8bdd6383, type: 2}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
       value: 0
