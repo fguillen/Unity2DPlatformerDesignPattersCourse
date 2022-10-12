@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 290e1dc87f42a4c35aa5d30153c76a0a, type: 2}
+  - {fileID: 11400000, guid: 03391f1e477bf458ba10bac802670870, type: 2}
 --- !u!114 &8790752078548120737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6b10f00144c4bb5b35d00accb415a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenAttacks: 1
+  delayBetweenAttacks: 3
 --- !u!1 &8790752078826221119
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789505557759428873, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.665
+      value: 0.148
       objectReference: {fileID: 0}
     - target: {fileID: 7789505557759428873, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_LocalPosition.y

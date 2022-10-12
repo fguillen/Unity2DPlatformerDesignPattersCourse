@@ -41,7 +41,10 @@ namespace WeaponSystem
         {
             Debug.Log($"ThrowableWeapon.OnTriggerEnter2D({collider.gameObject.name})");
 
-            if(!collider.CompareTag("Player") && Utils.InLayerMask(collider.gameObject.layer, data.hittableMask))
+            if(
+                collider.gameObject != agent.damageManager.gameObject &&
+                Utils.InLayerMask(collider.gameObject.layer, data.hittableMask)
+            )
                 Hit(collider);
         }
 
