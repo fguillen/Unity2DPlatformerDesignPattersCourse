@@ -47,7 +47,8 @@ public class Agent : MonoBehaviour
         damageManager.Initialize(this, agentData.maxHealth);
 
         pointsManager = GetComponentInChildren<PointsManager>();
-        pointsManager.Initialize();
+        if(pointsManager != null)
+            pointsManager.Initialize();
 
         respawnManager = GetComponentInChildren<RespawnManager>();
         if(respawnManager != null)
