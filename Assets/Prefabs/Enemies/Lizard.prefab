@@ -1,56 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &213270909
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 213270910}
-  - component: {fileID: 213270911}
-  m_Layer: 15
-  m_Name: PlayerInFrontSensor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &213270910
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213270909}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -0.120000005, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1558305378}
-  m_Father: {fileID: 7693250108307372397}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &213270911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213270909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05853ec5bd5304846a7eacde75b3c437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 1
-  gizmosColorObstacle: {r: 1, g: 0, b: 0, a: 1}
-  gizmosColorNoObstacle: {r: 0, g: 0, b: 1, a: 1}
-  objectiveLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  limit: {fileID: 1558305378}
 --- !u!1 &440764980
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,36 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e074ff65c3bb14fb5a42da3c6f069a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1558305377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1558305378}
-  m_Layer: 15
-  m_Name: Limit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1558305378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558305377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 213270910}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187716048790755961
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,10 +393,5 @@ PrefabInstance:
 --- !u!4 &8962866382358449158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-  m_PrefabInstance: {fileID: 1187716048949940518}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7693250108307372397 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8842948996484065355, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
   m_PrefabInstance: {fileID: 1187716048949940518}
   m_PrefabAsset: {fileID: 0}
