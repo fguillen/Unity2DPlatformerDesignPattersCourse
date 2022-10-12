@@ -437,7 +437,8 @@ MonoBehaviour:
   objectiveLayerMask:
     serializedVersion: 2
     m_Bits: 262144
-  tags: []
+  tags:
+  - Player
   selfCheck: 0
   OnHitDetected:
     m_PersistentCalls:

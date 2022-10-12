@@ -56,7 +56,7 @@ namespace Sensors
                 if(CheckTags(collidersFound[i]))
                     hits.Add(collidersFound[i]);
 
-            if(num > 0)
+            if(hits.Count > 0)
             {
                 if(!hasHit)
                     HitDetected();
@@ -76,7 +76,7 @@ namespace Sensors
 
         void HitUndetected()
         {
-            hasHit = true;
+            hasHit = false;
             OnHitUndetected?.Invoke();
         }
 
