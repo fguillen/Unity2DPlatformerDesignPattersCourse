@@ -16,6 +16,7 @@ namespace AI
             {
                 Vector2 direction = DirectionToCollider(agent.playerInAreaSensor.hits[0], agent.transform.position);
                 agent.agentInput.CallMovement(direction);
+                agent.agentInput.CallAttack();
                 lastAttackAt = Time.time;
             }
         }

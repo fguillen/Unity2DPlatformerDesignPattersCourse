@@ -17,7 +17,7 @@ public class AttackState : State
         agent.agentAnimation.PlayAnimation(AnimationType.attack);
         agent.weaponManager.ToggleWeaponVisibility(true);
 
-        if(agent.groundSensor.isGrounded)
+        if(agent.groundSensor != null && agent.groundSensor.isGrounded)
             agent.rb2d.velocity = Vector2.zero;
     }
 

@@ -13170,6 +13170,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1861813792019131361, guid: b8c92405e1f434d229137f5a2a76af25, type: 3}
+      propertyPath: delayBetweenAttacks
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603372514868082353, guid: b8c92405e1f434d229137f5a2a76af25, type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 92ec54cd3bae8465bb365a1c2c4b91cf, type: 2}
     - target: {fileID: 7603372514868082355, guid: b8c92405e1f434d229137f5a2a76af25, type: 3}
       propertyPath: m_RootOrder
       value: 9
