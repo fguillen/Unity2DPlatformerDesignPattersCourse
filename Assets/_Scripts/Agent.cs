@@ -13,6 +13,7 @@ public class Agent : MonoBehaviour
     [HideInInspector] public ClimbSensor climbSensor;
     [HideInInspector] public WallInFrontSensor wallInFrontSensor;
     [HideInInspector] public PlayerInFrontSensor playerInFrontSensor;
+    [HideInInspector] public PlayerInAreaSensor playerInAreaSensor;
     [HideInInspector] public EndOfGroundSensor endOfGroundSensor;
     [HideInInspector] public WeaponManager weaponManager;
     [HideInInspector] public StateManager stateManager;
@@ -35,24 +36,14 @@ public class Agent : MonoBehaviour
         climbSensor = GetComponentInChildren<ClimbSensor>();
         wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
         playerInFrontSensor = GetComponentInChildren<PlayerInFrontSensor>();
+        playerInAreaSensor = GetComponentInChildren<PlayerInAreaSensor>();
         endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();
 
         weaponManager = GetComponentInChildren<WeaponManager>();
-        weaponManager.Initialize(this);
-
         stateManager = GetComponentInChildren<StateManager>();
-        stateManager.Initialize(this);
-
         damageManager = GetComponentInChildren<DamageManager>();
-        damageManager.Initialize(this, agentData.maxHealth);
-
         pointsManager = GetComponentInChildren<PointsManager>();
-        if(pointsManager != null)
-            pointsManager.Initialize();
-
         respawnManager = GetComponentInChildren<RespawnManager>();
-        if(respawnManager != null)
-            respawnManager.Initialize(this);
     }
 
     // Start is called before the first frame update
@@ -97,7 +88,12 @@ public class Agent : MonoBehaviour
 
     public void Initialize()
     {
-        stateManager.TransitionToState(StateType.Idle);
+        respawnManager?.Initialize(this);
+        pointsManager?.Initialize();
         damageManager.Initialize(this, agentData.maxHealth);
+        stateManager.Initialize(this);
+        weaponManager.Initialize(this);
+
+        stateManager.TransitionToState(StateType.Idle);
     }
 }

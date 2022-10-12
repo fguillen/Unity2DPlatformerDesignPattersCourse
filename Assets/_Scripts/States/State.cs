@@ -11,6 +11,7 @@ public abstract class State : MonoBehaviour
 
     public void Initialize(Agent agent)
     {
+        Debug.Log($"{Type()} - agent: {agent}");
         this.agent = agent;
     }
 
