@@ -22,8 +22,7 @@ public class UIShakeAnimation : AAnimation
         if(rectTransform == null)
             rectTransform = GetComponent<RectTransform>();
 
-        if(originalRotation == null)
-            originalRotation = rectTransform.localRotation;
+        originalRotation = rectTransform.localRotation;
     }
 
     protected override void Animate()
