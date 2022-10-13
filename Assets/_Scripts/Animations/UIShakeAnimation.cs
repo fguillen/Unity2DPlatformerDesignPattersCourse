@@ -3,10 +3,10 @@ using DG.Tweening;
 
 public class UIShakeAnimation : AAnimation
 {
-    [SerializeField] float duration = 2f;
-    [SerializeField] float strength = 0.2f;
-    [SerializeField] int vibrato = 2;
-    [SerializeField] float randomness = 0.2f;
+    [SerializeField] float duration = 1f;
+    [SerializeField] float strength = 6f;
+    [SerializeField] int vibrato = 6;
+    [SerializeField] float randomness = 10f;
     [SerializeField] bool fadeOut = true;
 
     [SerializeField] int numLoops = -1;
@@ -22,13 +22,15 @@ public class UIShakeAnimation : AAnimation
         if(rectTransform == null)
             rectTransform = GetComponent<RectTransform>();
 
-        originalRotation = rectTransform.localRotation;
+        if(originalRotation == null)
+            originalRotation = rectTransform.localRotation;
     }
 
     protected override void Animate()
     {
+        Vector3 strengthVector = new Vector3(0f, 0f, strength);
         sequence = DOTween.Sequence();
-        sequence.Append(rectTransform.DOShakeRotation(duration, strength, vibrato, randomness, fadeOut, randomnessMode));
+        sequence.Append(rectTransform.DOShakeRotation(duration, strengthVector, vibrato, randomness, fadeOut, randomnessMode));
         sequence.AppendInterval(pauseDuration);
         sequence.SetLoops(numLoops);
         sequence.Play();

@@ -26,17 +26,29 @@ public abstract class AAnimation : MonoBehaviour
     }
 
     protected abstract void Animate();
+    protected abstract void Reset();
 
     void KillSequence()
     {
         sequence?.Kill();
+        playing = false;
     }
-
-    protected abstract void Reset();
 
     void OnDestroy()
     {
         KillSequence();
+    }
+
+    void OnDisable()
+    {
+        KillSequence();
+        Reset();
+    }
+
+    void OnEnable()
+    {
+        if(onAwake && !playing)
+            Play();
     }
 
     void OnValidate()
