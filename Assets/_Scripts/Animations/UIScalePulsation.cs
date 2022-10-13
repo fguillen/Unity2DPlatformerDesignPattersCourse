@@ -6,12 +6,14 @@ public class UIScalePulsation : MonoBehaviour
     [SerializeField] float finalScale = 2f;
     [SerializeField] float duration = 0.2f;
     [SerializeField] int numLoops = -1;
+    [SerializeField] float pauseDuration = 0f;
     [SerializeField] bool onAwake = false;
     [SerializeField] RectTransform rectTransform;
 
     Vector3 originalScaleV;
     Vector3 finalScaleV;
     Sequence sequence;
+    bool initialized = false;
 
     void Awake()
     {
@@ -19,7 +21,8 @@ public class UIScalePulsation : MonoBehaviour
             rectTransform = GetComponent<RectTransform>();
 
         originalScaleV = rectTransform.localScale;
-        finalScaleV = Vector3.one * finalScale;
+
+        initialized = true;
     }
 
     void Start()
@@ -33,9 +36,11 @@ public class UIScalePulsation : MonoBehaviour
         KillSequence();
         ResetScale();
 
+        finalScaleV = Vector3.one * finalScale;
         sequence = DOTween.Sequence();
         sequence.Append(rectTransform.DOScale(finalScaleV, duration));
         sequence.Append(rectTransform.DOScale(originalScaleV, duration));
+        sequence.AppendInterval(pauseDuration);
         sequence.SetLoops(numLoops);
         sequence.Play();
     }
@@ -53,5 +58,11 @@ public class UIScalePulsation : MonoBehaviour
     void OnDestroy()
     {
         KillSequence();
+    }
+
+    void OnValidate()
+    {
+        if(initialized)
+            Play();
     }
 }
