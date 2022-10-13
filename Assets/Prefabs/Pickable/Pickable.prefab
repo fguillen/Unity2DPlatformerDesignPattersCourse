@@ -326,8 +326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db569da5b374eed8031e213c7ba627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAwake: 1
   distance: 0.5
   duration: 1
+  pauseDuration: 0
+  numLoops: -1
   ease: 2
 --- !u!61 &5431287146614270213
 BoxCollider2D:

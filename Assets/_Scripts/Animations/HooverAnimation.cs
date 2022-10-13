@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class HooverAnimation : MonoBehaviour
+public class HooverAnimation : AAnimation
 {
     [SerializeField] float distance = 0.2f;
     [SerializeField] float duration = 0.2f;
+    [SerializeField] float pauseDuration = 0f;
+    [SerializeField] int numLoops = -1;
     [SerializeField] Ease ease;
 
     Vector2 originalPosition;
@@ -16,16 +18,19 @@ public class HooverAnimation : MonoBehaviour
         originalPosition = transform.localPosition;
     }
 
-    void Start()
+    protected override void Animate()
     {
-        transform
-            .DOLocalMoveY(originalPosition.y + distance, duration)
-            .SetEase(ease)
-            .SetLoops(-1, LoopType.Yoyo);
+        sequence = DOTween.Sequence();
+        sequence.Append(transform.DOLocalMoveY(originalPosition.y + distance, duration));
+        sequence.Append(transform.DOLocalMoveY(originalPosition.y, duration));
+        sequence.SetEase(ease);
+        sequence.AppendInterval(pauseDuration);
+        sequence.SetLoops(numLoops);
+        sequence.Play();
     }
 
-    void OnDisable()
+    protected override void Reset()
     {
-        DOTween.Kill(transform);
+        transform.localPosition = originalPosition;
     }
 }

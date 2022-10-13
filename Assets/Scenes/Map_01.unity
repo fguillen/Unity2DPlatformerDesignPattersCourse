@@ -4871,10 +4871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7817da35253cb4071b67604147004fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAwake: 0
   finalSize: 100
   duration: 0.2
   numLoops: 1
-  onAwake: 0
   text: {fileID: 0}
 --- !u!1 &718583141
 GameObject:

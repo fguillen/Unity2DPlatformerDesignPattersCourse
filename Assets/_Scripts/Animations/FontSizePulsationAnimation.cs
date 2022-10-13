@@ -2,16 +2,14 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 
-public class FontSizePulsation : MonoBehaviour
+public class FontSizePulsationAnimation : AAnimation
 {
     [SerializeField] float finalSize = 2f;
     [SerializeField] float duration = 0.2f;
     [SerializeField] int numLoops = -1;
-    [SerializeField] bool onAwake = false;
     [SerializeField] TextMeshProUGUI text;
 
     float originalSize;
-    Sequence sequence;
 
     void Awake()
     {
@@ -21,17 +19,8 @@ public class FontSizePulsation : MonoBehaviour
         originalSize = text.fontSize;
     }
 
-    void Start()
+    protected override void Animate()
     {
-        if(onAwake)
-            Play();
-    }
-
-    public void Play()
-    {
-        KillSequence();
-        ResetSize();
-
         sequence = DOTween.Sequence();
         sequence.Append(DOTween.To(() => originalSize, SetSize, finalSize, duration));
         sequence.Append(DOTween.To(() => finalSize, SetSize, originalSize, duration));
@@ -44,18 +33,8 @@ public class FontSizePulsation : MonoBehaviour
         text.fontSize = size;
     }
 
-    void KillSequence()
-    {
-        sequence?.Kill();
-    }
-
-    void ResetSize()
+    protected override void Reset()
     {
         text.fontSize = originalSize;
-    }
-
-    void OnDestroy()
-    {
-        KillSequence();
     }
 }
