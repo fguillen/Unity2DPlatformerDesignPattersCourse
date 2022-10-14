@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 92ec54cd3bae8465bb365a1c2c4b91cf, type: 2}
+  - {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
 --- !u!1001 &4839370098922272536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2794863383776218695, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3686008052872951327, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Size.x
       value: 0.921916
@@ -187,6 +191,30 @@ PrefabInstance:
     - target: {fileID: 6236291919777241031, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: obstacleFound
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842101796415867306, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941721952645900377, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnPointsChange.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941721952645900377, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnPointsChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941721952645900377, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnPointsChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941721952645900377, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnPointsChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PointsUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941721952645900377, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnPointsChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7789505557465438930, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Name
@@ -235,6 +263,78 @@ PrefabInstance:
     - target: {fileID: 7789505557712592148, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Direction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnSingleWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnWeaponChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505557759428874, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: OnMultipleWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Sprite
