@@ -16,7 +16,6 @@ public class FlyState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.fly);
-        agent.stateManager.isFlying = true;
 
         if(agent.rb2d.bodyType != RigidbodyType2D.Static)
         {
@@ -31,7 +30,6 @@ public class FlyState : State
 
     protected override void ExitState()
     {
-        agent.stateManager.isFlying = false;
         agent.rb2d.gravityScale = originalGravityScale;
     }
 

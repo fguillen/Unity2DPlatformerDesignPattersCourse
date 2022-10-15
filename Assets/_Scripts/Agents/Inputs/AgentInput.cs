@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AgentInput : MonoBehaviour
 {
-    public Vector2 MovementVector { get; set; }
+    // public Vector2 MovementVector { get; set; }
     public event Action OnAttack;
     public event Action OnJumpPressed;
     public event Action OnJumpReleased;
@@ -14,6 +14,7 @@ public class AgentInput : MonoBehaviour
 
     public void CallAttack()
     {
+        Debug.Log("AgentInput.CallAttack()");
         OnAttack?.Invoke();
     }
 

@@ -6,7 +6,7 @@ public class MovementData : MonoBehaviour
 {
     public float currentSpeed;
     public Vector2 currentVelocity;
-    public Vector2 movementDirectionRounded { get; private set; }
+    public Vector2 movementLastDirection { get; private set; }
     public Vector2 movementDirectionNormalized { get; private set; }
 
     private Vector2 _agentMovement;
@@ -14,14 +14,27 @@ public class MovementData : MonoBehaviour
         get => _agentMovement;
         set {
             _agentMovement = value;
-            CalculateMovementDirectionRounded();
+            CalculateMovementLastDirection();
             CalculateMovementDirectionNormalized();
         }
     }
 
-    void CalculateMovementDirectionRounded()
+    void CalculateMovementLastDirection()
     {
-        movementDirectionRounded = new Vector2(Mathf.RoundToInt(agentMovement.x), Mathf.RoundToInt(agentMovement.y));
+        float x = movementLastDirection.x;
+        float y = movementLastDirection.y;
+
+        if(agentMovement.x > 0)
+            x = 1;
+        else if(agentMovement.x < 0)
+            x = -1;
+
+        if(agentMovement.y > 0)
+            y = 1;
+        else if(agentMovement.y < 0)
+            y = -1;
+
+        movementLastDirection = new Vector2(x, y);
     }
 
     void CalculateMovementDirectionNormalized()

@@ -20,9 +20,6 @@ public class HittedState : State
 
     protected override void HandleAnimationEnd()
     {
-        if(agent.stateManager.isFlying)
-            agent.stateManager.TransitionToState(StateType.Fly);
-        else
-            agent.stateManager.TransitionToState(StateType.Idle);
+        agent.stateManager.TransitionToPreviousState();
     }
 }

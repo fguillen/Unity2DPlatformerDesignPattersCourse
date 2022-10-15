@@ -51,8 +51,8 @@ public class PlayerInput : AgentInput
 
     void GetMovementInput()
     {
-        MovementVector = GetMovementVector();
-        CallMovement(MovementVector);
+        Vector2 direction = GetMovementVector();
+        CallMovement(direction);
     }
 
     protected Vector2 GetMovementVector()

@@ -8,7 +8,7 @@ public class StateManager : MonoBehaviour
     [SerializeField] List<State> states;
 
     public State currentState { get; private set; }
-    public bool isFlying = false;
+    State previousState;
 
     void Awake()
     {
@@ -33,13 +33,25 @@ public class StateManager : MonoBehaviour
 
     public void TransitionToState(StateType stateType)
     {
+        Debug.Log($"TransitionToState: {stateType}");
+        previousState = currentState;
+
         currentState?.Exit();
         currentState = GetStateByType(stateType);
 
         if(currentState == null)
             throw new ArgumentException($"State not found: '{stateType}'");
 
+        if(previousState == null)
+            previousState = currentState;
+
         currentState.Enter();
+    }
+
+    public void TransitionToPreviousState()
+    {
+        Debug.Log($"TransitionToPreviousState({previousState.Type()})");
+        TransitionToState(previousState.Type());
     }
 
     State GetStateByType(StateType type)

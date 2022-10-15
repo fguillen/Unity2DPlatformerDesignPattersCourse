@@ -47,7 +47,7 @@ public class ClimbState : State
 
     void CalculateVelocity()
     {
-        agent.movementData.currentVelocity = agent.movementData.movementDirectionRounded * agent.agentData.climbSpeed;
+        agent.movementData.currentVelocity = agent.movementData.movementLastDirection * agent.agentData.climbSpeed;
     }
 
     protected override void HandleJumpPressed()

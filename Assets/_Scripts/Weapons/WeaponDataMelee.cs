@@ -11,7 +11,7 @@ namespace WeaponSystem
 
         public override bool CanBeUsed(Agent agent)
         {
-            return agent.groundSensor.isGrounded;
+            return agent.stateManager.currentState.Type() == StateType.Fly || agent.groundSensor.isGrounded;
         }
 
         public override void Attack(Agent agent)
@@ -49,7 +49,7 @@ namespace WeaponSystem
 
         Vector2 Direction(Agent agent)
         {
-            return new Vector2(agent.movementData.movementDirectionRounded.x, 0f);
+            return new Vector2(agent.movementData.movementLastDirection.x, 0f);
         }
     }
 }
