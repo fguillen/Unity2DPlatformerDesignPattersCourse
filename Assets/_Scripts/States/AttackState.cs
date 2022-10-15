@@ -14,7 +14,7 @@ public class AttackState : State
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.attack);
+        agent.animationManager.PlayAnimation(AnimationType.attack);
         agent.weaponManager.ToggleWeaponVisibility(true);
 
         if(agent.groundSensor != null && agent.groundSensor.isGrounded)

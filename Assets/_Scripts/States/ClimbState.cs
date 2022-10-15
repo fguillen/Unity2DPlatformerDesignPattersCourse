@@ -13,7 +13,7 @@ public class ClimbState : State
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.climb);
+        agent.animationManager.PlayAnimation(AnimationType.climb);
 
         agent.movementData.currentSpeed = 0f;
         agent.movementData.currentVelocity = Vector2.zero;
@@ -47,11 +47,7 @@ public class ClimbState : State
 
     void CalculateVelocity()
     {
-        agent.movementData.currentVelocity =
-            new Vector2(
-                agent.movementData.agentMovementAbs.x * agent.agentData.climbSpeed,
-                agent.movementData.agentMovementAbs.y * agent.agentData.climbSpeed
-            );
+        agent.movementData.currentVelocity = agent.movementData.movementDirectionRounded * agent.agentData.climbSpeed;
     }
 
     protected override void HandleJumpPressed()

@@ -15,7 +15,7 @@ public class JumpState : RunState
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.jump);
+        agent.animationManager.PlayAnimation(AnimationType.jump);
         agent.rb2d.AddForce(Vector2.up * agent.agentData.jumpForce, ForceMode2D.Impulse);
         jumpPressed = true;
 

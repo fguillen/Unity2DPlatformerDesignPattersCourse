@@ -11,7 +11,7 @@ public class IdleState : State
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.idle);
+        agent.animationManager.PlayAnimation(AnimationType.idle);
 
         if(agent.rb2d.bodyType != RigidbodyType2D.Static)
             if(agent.groundSensor == null || agent.groundSensor.isGrounded)

@@ -8,6 +8,7 @@ public class StateManager : MonoBehaviour
     [SerializeField] List<State> states;
 
     public State currentState { get; private set; }
+    public bool isFlying = false;
 
     void Awake()
     {

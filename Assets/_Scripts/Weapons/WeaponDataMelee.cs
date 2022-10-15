@@ -49,7 +49,7 @@ namespace WeaponSystem
 
         Vector2 Direction(Agent agent)
         {
-            return new Vector2(agent.movementData.horizontalMovementDirection, 0f);
+            return new Vector2(agent.movementData.movementDirectionRounded.x, 0f);
         }
     }
 }

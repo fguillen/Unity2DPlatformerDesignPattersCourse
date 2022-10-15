@@ -17,7 +17,7 @@ public class DieState : State
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.die);
+        agent.animationManager.PlayAnimation(AnimationType.die);
 
         if(agent.rb2d.bodyType != RigidbodyType2D.Static)
             agent.rb2d.velocity = new Vector2(0f, agent.rb2d.velocity.y);

@@ -14,7 +14,7 @@ public class FallState : RunState
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.fall);
+        agent.animationManager.PlayAnimation(AnimationType.fall);
     }
 
     protected override void ExitState()
@@ -26,7 +26,7 @@ public class FallState : RunState
 
     public override void StateUpdate()
     {
-        if(agent.climbSensor.canClimb && agent.movementData.agentMovementAbs.y > 0)
+        if(agent.climbSensor.canClimb && agent.movementData.movementDirectionRounded.y > 0)
             agent.stateManager.TransitionToState(StateType.Climb);
     }
 

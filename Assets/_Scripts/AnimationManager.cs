@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentAnimation : MonoBehaviour
+public class AnimationManager : MonoBehaviour
 {
     Animator animator;
     AnimationType animationActive;
@@ -53,6 +53,10 @@ public class AgentAnimation : MonoBehaviour
                 Play("Die");
                 break;
 
+            case AnimationType.fly:
+                Play("Fly");
+                break;
+
             default:
                 break;
         }
@@ -74,17 +78,4 @@ public class AgentAnimation : MonoBehaviour
     {
         OnAnimationEnd?.Invoke();
     }
-}
-
-public enum AnimationType
-{
-    die,
-    hit,
-    idle,
-    attack,
-    run,
-    jump,
-    fall,
-    climb,
-    land
 }

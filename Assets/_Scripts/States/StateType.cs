@@ -8,5 +8,6 @@ public enum StateType
     Jump,
     Fall,
     Climb,
-    Land
+    Land,
+    Fly
 }

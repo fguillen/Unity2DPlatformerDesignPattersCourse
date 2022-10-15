@@ -26,8 +26,8 @@ public abstract class State : MonoBehaviour
         this.agent.damageManager.OnHit.AddListener(HandleHitted);
         this.agent.damageManager.OnDie.AddListener(HandleDie);
 
-        this.agent.agentAnimation.OnAnimationAction += HandleAnimationAction;
-        this.agent.agentAnimation.OnAnimationEnd += HandleAnimationEnd;
+        this.agent.animationManager.OnAnimationAction += HandleAnimationAction;
+        this.agent.animationManager.OnAnimationEnd += HandleAnimationEnd;
 
         EnterState();
     }
@@ -43,8 +43,8 @@ public abstract class State : MonoBehaviour
         this.agent.damageManager.OnHit.RemoveListener(HandleHitted);
         this.agent.damageManager.OnDie.RemoveListener(HandleDie);
 
-        this.agent.agentAnimation.OnAnimationAction -= HandleAnimationAction;
-        this.agent.agentAnimation.OnAnimationEnd -= HandleAnimationEnd;
+        this.agent.animationManager.OnAnimationAction -= HandleAnimationAction;
+        this.agent.animationManager.OnAnimationEnd -= HandleAnimationEnd;
 
         ExitState();
     }

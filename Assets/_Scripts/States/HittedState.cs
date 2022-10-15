@@ -14,12 +14,15 @@ public class HittedState : State
 
     protected override void EnterState()
     {
-        agent.agentAnimation.PlayAnimation(AnimationType.hit);
+        agent.animationManager.PlayAnimation(AnimationType.hit);
         OnHit?.Invoke();
     }
 
     protected override void HandleAnimationEnd()
     {
-        agent.stateManager.TransitionToState(StateType.Idle);
+        if(agent.stateManager.isFlying)
+            agent.stateManager.TransitionToState(StateType.Fly);
+        else
+            agent.stateManager.TransitionToState(StateType.Idle);
     }
 }

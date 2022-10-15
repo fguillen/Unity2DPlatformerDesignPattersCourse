@@ -31,7 +31,7 @@ namespace WeaponSystem
             rb2d.velocity = direction * data.speed;
 
             transform.DOLocalRotate(
-                new Vector3(0, 0, 360 * -agent.movementData.horizontalMovementDirection),
+                new Vector3(0, 0, 360 * -agent.movementData.movementDirectionRounded.x),
                 0.5f,
                 RotateMode.FastBeyond360
             ).SetRelative(true).SetEase(Ease.Linear);
@@ -69,7 +69,7 @@ namespace WeaponSystem
 
         Vector2 Direction(Agent agent)
         {
-            return new Vector2(agent.movementData.horizontalMovementDirection, 0f);
+            return new Vector2(agent.movementData.movementDirectionRounded.x, 0f);
         }
 
         void DestroyObject()

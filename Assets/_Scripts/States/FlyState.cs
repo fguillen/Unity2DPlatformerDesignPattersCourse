@@ -3,38 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class RunState : State
+public class FlyState : State
 {
     [SerializeField] private UnityEvent OnStep;
+    float originalGravityScale;
 
     public override StateType Type()
     {
-        return StateType.Run;
+        return StateType.Fly;
     }
 
     protected override void EnterState()
     {
-        agent.animationManager.PlayAnimation(AnimationType.run);
+        agent.animationManager.PlayAnimation(AnimationType.fly);
+        agent.stateManager.isFlying = true;
 
         if(agent.rb2d.bodyType != RigidbodyType2D.Static)
+        {
             agent.rb2d.velocity = Vector2.zero;
+            originalGravityScale = agent.rb2d.gravityScale;
+            agent.rb2d.gravityScale = 0f;
+        }
 
         agent.movementData.currentSpeed = 0f;
         agent.movementData.currentVelocity = Vector2.zero;
     }
 
+    protected override void ExitState()
+    {
+        agent.stateManager.isFlying = false;
+        agent.rb2d.gravityScale = originalGravityScale;
+    }
+
     public override void StateFixedUpdate()
     {
-        if(agent.groundSensor != null && !agent.groundSensor.isGrounded)
-        {
-            agent.stateManager.TransitionToState(StateType.Fall);
-            return;
-        }
-
         SetPlayerVelocity();
-
-        if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)
-            agent.stateManager.TransitionToState(StateType.Idle);
     }
 
     protected void SetPlayerVelocity()
@@ -48,7 +51,7 @@ public class RunState : State
 
     void CalculateSpeed()
     {
-        if(Mathf.Abs(agent.movementData.agentMovement.x) > 0f)
+        if(Mathf.Abs(agent.movementData.agentMovement.magnitude) > 0f)
             agent.movementData.currentSpeed += agent.agentData.acceleration * Time.deltaTime;
         else
             agent.movementData.currentSpeed -= agent.agentData.deceleration * Time.deltaTime;
@@ -58,13 +61,7 @@ public class RunState : State
 
     void CalculateVelocity()
     {
-        agent.movementData.currentVelocity = new Vector2(agent.movementData.movementDirectionRounded.x * agent.movementData.currentSpeed, agent.rb2d.velocity.y);
-    }
-
-    protected override void HandleJumpPressed()
-    {
-        if(agent.groundSensor == null || agent.groundSensor.isGrounded)
-            agent.stateManager.TransitionToState(StateType.Jump);
+        agent.movementData.currentVelocity = agent.movementData.movementDirectionNormalized * agent.movementData.currentSpeed;
     }
 
     protected override void HandleAnimationAction()

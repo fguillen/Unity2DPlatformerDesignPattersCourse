@@ -8,7 +8,7 @@ public class Agent : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb2d;
     [HideInInspector] public AgentInput agentInput;
-    [HideInInspector] public AgentAnimation agentAnimation;
+    [HideInInspector] public AnimationManager animationManager;
     [HideInInspector] public GroundSensor groundSensor;
     [HideInInspector] public ClimbSensor climbSensor;
     [HideInInspector] public WallInFrontSensor wallInFrontSensor;
@@ -25,12 +25,13 @@ public class Agent : MonoBehaviour
 
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
+    [SerializeField] public StateType originalState;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         agentInput = GetComponentInParent<AgentInput>();
-        agentAnimation = GetComponentInChildren<AgentAnimation>();
+        animationManager = GetComponentInChildren<AnimationManager>();
         spriteFlipper = GetComponentInChildren<SpriteFlipper>();
         groundSensor = GetComponentInChildren<GroundSensor>();
         climbSensor = GetComponentInChildren<ClimbSensor>();
@@ -94,6 +95,6 @@ public class Agent : MonoBehaviour
         stateManager.Initialize(this);
         weaponManager.Initialize(this);
 
-        stateManager.TransitionToState(StateType.Idle);
+        stateManager.TransitionToState(originalState);
     }
 }
