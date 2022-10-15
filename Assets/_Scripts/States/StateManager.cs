@@ -34,7 +34,9 @@ public class StateManager : MonoBehaviour
     public void TransitionToState(StateType stateType)
     {
         Debug.Log($"TransitionToState: {stateType}");
-        previousState = currentState;
+
+        if(currentState != null && currentState.Type() != StateType.Attack && currentState.Type() != StateType.Hit)
+            previousState = currentState;
 
         currentState?.Exit();
         currentState = GetStateByType(stateType);

@@ -51,4 +51,9 @@ public class DamageManager : MonoBehaviour, IHittable
         currentHealth = Mathf.Min(maxHealth, currentHealth);
         OnHealthChange?.Invoke(currentHealth);
     }
+
+    public Agent Agent()
+    {
+        return agent;
+    }
 }

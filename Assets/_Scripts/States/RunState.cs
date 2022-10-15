@@ -25,7 +25,7 @@ public class RunState : State
 
     public override void StateFixedUpdate()
     {
-        if(agent.groundSensor != null && !agent.groundSensor.isGrounded)
+        if(agent.groundSensor != null && !agent.groundSensor.IsGrounded())
         {
             agent.stateManager.TransitionToState(StateType.Fall);
             return;
@@ -63,7 +63,7 @@ public class RunState : State
 
     protected override void HandleJumpPressed()
     {
-        if(agent.groundSensor == null || agent.groundSensor.isGrounded)
+        if(agent.groundSensor == null || agent.groundSensor.IsGrounded())
             agent.stateManager.TransitionToState(StateType.Jump);
     }
 

@@ -24,4 +24,9 @@ public class FragileBlock : MonoBehaviour, IHittable
     {
         Destroy(gameObject);
     }
+
+    public Agent Agent()
+    {
+        return null;
+    }
 }

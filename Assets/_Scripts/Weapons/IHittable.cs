@@ -6,6 +6,8 @@ namespace WeaponSystem
 {
     public interface IHittable
     {
+        Agent Agent();
         void GetHit(int damage, Vector2 point);
+
     }
 }

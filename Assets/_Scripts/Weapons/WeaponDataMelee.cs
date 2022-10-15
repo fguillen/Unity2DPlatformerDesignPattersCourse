@@ -11,7 +11,7 @@ namespace WeaponSystem
 
         public override bool CanBeUsed(Agent agent)
         {
-            return agent.stateManager.currentState.Type() == StateType.Fly || agent.groundSensor.isGrounded;
+            return agent.stateManager.currentState.Type() == StateType.Fly || agent.groundSensor.IsGrounded();
         }
 
         public override void Attack(Agent agent)
@@ -32,8 +32,11 @@ namespace WeaponSystem
 
                 foreach (var hittable in hit.collider.GetComponents<IHittable>())
                 {
-                    Debug.Log($"Sending Hit");
-                    hittable.GetHit(damage, hit.point);
+                    if(hittable.Agent() != agent)
+                    {
+                        Debug.Log($"Sending Hit");
+                        hittable.GetHit(damage, hit.point);
+                    }
                 }
             }
         }

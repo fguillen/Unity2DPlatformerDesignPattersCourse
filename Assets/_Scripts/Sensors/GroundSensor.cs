@@ -7,18 +7,16 @@ namespace Sensors
 {
     public class GroundSensor : MonoBehaviour
     {
-        public bool isGrounded { get; private set; }
-
-        [SerializeField] float checkIntervalSeconds = 0.1f;
+        bool isGrounded;
 
         List<RaySensor> RaySensors;
         Collider2D insideCollider;
         float lastTimeChecked;
 
-        void Update()
+        public bool IsGrounded()
         {
-            if(lastTimeChecked + checkIntervalSeconds < Time.time)
-                CheckGrounded();
+            CheckGrounded();
+            return isGrounded;
         }
 
         void Awake()
@@ -29,7 +27,6 @@ namespace Sensors
 
         void CheckGrounded()
         {
-            lastTimeChecked = Time.time;
             isGrounded = false;
 
             foreach (var RaySensor in RaySensors)
