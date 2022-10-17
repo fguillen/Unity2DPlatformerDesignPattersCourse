@@ -52,8 +52,6 @@ public class Cloud : MonoBehaviour
 
         imageRectTransform.position = position;
 
-        Debug.Log($"position: {position}, {imageRectTransform.position}");
-
         Initialize();
     }
 }

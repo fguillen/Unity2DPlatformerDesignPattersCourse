@@ -13,8 +13,6 @@ public static class RandomUtils
 
         Vector2 result = new Vector2(x, y);
 
-        Debug.Log($"RandomUtils: {center}, {size}, {result}");
-
         return result;
     }
 }

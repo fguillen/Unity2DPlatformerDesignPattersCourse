@@ -9,12 +9,18 @@ namespace AI
         [SerializeField] AgentBehaviour attackBehaviour;
         [SerializeField] AgentBehaviour patrolBehaviour;
 
+        void Start()
+        {
+            attackBehaviour.Initialize(this);
+            patrolBehaviour.Initialize(this);
+        }
+
         void Update()
         {
             if(agent.groundSensor.IsGrounded())
             {
-                attackBehaviour.Perform(agent);
-                patrolBehaviour.Perform(agent);
+                attackBehaviour.Perform();
+                patrolBehaviour.Perform();
             }
         }
     }

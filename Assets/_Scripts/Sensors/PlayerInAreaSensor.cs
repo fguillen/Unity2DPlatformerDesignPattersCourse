@@ -10,7 +10,7 @@ namespace Sensors
         [SerializeField] bool staticPosition;
         Vector2 originalPosition;
 
-        void Awake()
+        protected override void PostInitialize()
         {
             originalPosition = transform.position;
         }

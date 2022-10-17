@@ -9,10 +9,16 @@ namespace AI
         [SerializeField] AgentBehaviour attackBehaviour;
         [SerializeField] AgentBehaviour patrolBehaviour;
 
+        void Start()
+        {
+            attackBehaviour.Initialize(this);
+            patrolBehaviour.Initialize(this);
+        }
+
         void Update()
         {
-            attackBehaviour.Perform(agent);
-            patrolBehaviour.Perform(agent);
+            attackBehaviour.Perform();
+            patrolBehaviour.Perform();
         }
     }
 }

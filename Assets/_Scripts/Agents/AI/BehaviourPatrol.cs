@@ -7,12 +7,13 @@ namespace AI
     {
         Vector2 currentMovement;
 
-
-        public override void Perform(Agent agent)
+        public override void PostInitialize()
         {
-            if(currentMovement == Vector2.zero)
-                InitCurrentMovement();
+             InitCurrentMovement();
+        }
 
+        public override void Perform()
+        {
             if(
                 agent.wallInFrontSensor.HasHit() ||
                 !agent.endOfGroundSensor.HasHit()

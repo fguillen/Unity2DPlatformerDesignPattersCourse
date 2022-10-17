@@ -7,7 +7,7 @@ namespace AI
         float lastAttackAt = 0;
         [SerializeField] float delayBetweenAttacks = 1f;
 
-        public override void Perform(Agent agent)
+        public override void Perform()
         {
             if(lastAttackAt + delayBetweenAttacks > Time.time)
                 return;

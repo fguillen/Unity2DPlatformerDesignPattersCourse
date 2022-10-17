@@ -10,15 +10,10 @@ namespace AI
         [SerializeField] float waitingTime;
 
         Vector2 currentPoint;
-        bool isInitialized = false;
         bool isWaiting = false;
-        Agent agent;
 
-        public override void Perform(Agent agent)
+        public override void Perform()
         {
-            if(!isInitialized)
-                Initialize(agent);
-
             if(isWaiting)
                 return;
 
@@ -28,11 +23,9 @@ namespace AI
                 ArrivedToPoint();
         }
 
-        void Initialize(Agent agent)
+        public override void PostInitialize()
         {
-            this.agent = agent;
             currentPoint = path.ClosestPoint(agent.transform.position);
-            isInitialized = true;
         }
 
         bool CheckIfArriveToPoint()
