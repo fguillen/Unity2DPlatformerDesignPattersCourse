@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,14 +32,22 @@ namespace Sensors
 
         void Awake()
         {
+            Debug.Log("BoxSensor.Awake()");
             theCollider = GetComponent<Collider2D>();
+            if(theCollider == null)
+                throw new Exception("Collider not found");
+
             collidersFound = new Collider2D[10];
             hits = new List<Collider2D>();
 
             contactFilter = new ContactFilter2D();
             contactFilter.SetLayerMask(objectiveLayerMask);
             contactFilter.useTriggers = true;
+
+            PostInitialize();
         }
+
+        protected virtual void PostInitialize() {}
 
         void Update()
         {
@@ -49,7 +58,11 @@ namespace Sensors
         void CheckHit()
         {
             contactFilter.SetLayerMask(objectiveLayerMask);
-            int num = theCollider.OverlapCollider(contactFilter, collidersFound);
+            int num =
+                theCollider.OverlapCollider(
+                    contactFilter,
+                    collidersFound
+                );
 
             hits.Clear();
             for (int i = 0; i < num; i++)

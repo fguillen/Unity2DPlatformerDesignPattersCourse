@@ -14,7 +14,6 @@ public class AgentInput : MonoBehaviour
 
     public void CallAttack()
     {
-        Debug.Log("AgentInput.CallAttack()");
         OnAttack?.Invoke();
     }
 

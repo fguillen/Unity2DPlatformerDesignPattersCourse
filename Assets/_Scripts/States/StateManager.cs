@@ -52,7 +52,6 @@ public class StateManager : MonoBehaviour
 
     public void TransitionToPreviousState()
     {
-        Debug.Log($"TransitionToPreviousState({previousState.Type()})");
         TransitionToState(previousState.Type());
     }
 

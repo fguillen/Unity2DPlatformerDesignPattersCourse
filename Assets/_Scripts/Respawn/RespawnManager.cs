@@ -16,8 +16,6 @@ public class RespawnManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log($"RespawnManager.Trigger({collider.gameObject.tag})");
-
         if(collider.gameObject.CompareTag("SpawnPoint"))
             SetCurrentSpawnPoint(collider.gameObject.GetComponent<SpawnPoint>());
     }

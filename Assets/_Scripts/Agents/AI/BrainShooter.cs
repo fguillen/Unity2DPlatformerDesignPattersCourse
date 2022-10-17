@@ -8,9 +8,14 @@ namespace AI
     {
         [SerializeField] BehaviourAttackWhenPlayerInArea behaviourAttackWhenPlayerInArea;
 
+        void Start()
+        {
+            behaviourAttackWhenPlayerInArea.Initialize(this);
+        }
+
         void Update()
         {
-            behaviourAttackWhenPlayerInArea.Perform(agent);
+            behaviourAttackWhenPlayerInArea.Perform();
         }
     }
 }

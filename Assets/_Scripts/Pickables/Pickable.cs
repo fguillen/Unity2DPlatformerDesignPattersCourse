@@ -18,8 +18,6 @@ public class Pickable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"APickable.OnTriggerEnter2D: {other.gameObject.name}");
-
         if(other.CompareTag("Player"))
             PickUp(other.GetComponent<Agent>());
     }
